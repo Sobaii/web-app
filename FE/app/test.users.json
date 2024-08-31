@@ -1,0 +1,2999 @@
+[{
+  "_id": {
+    "$oid": "6614762528ea962e1e170f35"
+  },
+  "firstName": "tony",
+  "lastName": "qiu",
+  "email": "tonyqiuj@12345gmail.com",
+  "password": "$2b$10$B1Usj8avCaQnrJTp3rG3.uoMG/QWJVXiuPjcxcEbd0oyHQU4xQbBC",
+  "date": {
+    "$date": "2024-04-08T22:56:37.045Z"
+  },
+  "spreadsheets": [
+    {
+      "name": "Spreadsheet 2024-04-09T04:00:18.010Z",
+      "expenses": [
+        {
+          "FILE_PAGE": {
+            "text": "1",
+            "confidence": 100,
+            "_id": {
+              "$oid": "6615f3f6adc690afb3b9e4cf"
+            }
+          },
+          "FILE_NAME": {
+            "text": "CAIN24-854879.pdf",
+            "confidence": 100,
+            "_id": {
+              "$oid": "6615f3f6adc690afb3b9e4d0"
+            }
+          },
+          "INVOICE_RECEIPT_DATE": {
+            "text": "2024-04-03",
+            "confidence": 100,
+            "_id": {
+              "$oid": "6615f3f6adc690afb3b9e4d1"
+            }
+          },
+          "VENDOR_NAME": {
+            "text": "aws",
+            "confidence": 97.96258544921875,
+            "_id": {
+              "$oid": "6615f3f6adc690afb3b9e4d2"
+            }
+          },
+          "VENDOR_ADDRESS": {
+            "text": "Amazon Web Services Canada, Inc.\n120 Bremner Blvd. 26th Floor, Toronto, ON, M5J 0A8, Canada",
+            "confidence": 88.15337371826172,
+            "_id": {
+              "$oid": "6615f3f6adc690afb3b9e4d3"
+            }
+          },
+          "TOTAL": {
+            "text": "CAD 9.19",
+            "confidence": 97.26666259765625,
+            "_id": {
+              "$oid": "6615f3f6adc690afb3b9e4d4"
+            }
+          },
+          "SUBTOTAL": {
+            "text": "CAD 98.13",
+            "confidence": 100,
+            "_id": {
+              "$oid": "6615f3f6adc690afb3b9e4d5"
+            }
+          },
+          "TAX": {
+            "text": "CAD 1.05",
+            "confidence": 96.07051849365234,
+            "_id": {
+              "$oid": "6615f3f6adc690afb3b9e4d6"
+            }
+          },
+          "VENDOR_PHONE": {
+            "text": "",
+            "confidence": 0,
+            "_id": {
+              "$oid": "6615f3f6adc690afb3b9e4dd"
+            }
+          },
+          "STREET": {
+            "text": "120 Bremner Blvd. 26th Floor,",
+            "confidence": 99.71393585205078,
+            "_id": {
+              "$oid": "6615f3f6adc690afb3b9e4d7"
+            }
+          },
+          "CITY": {
+            "text": "Toronto,",
+            "confidence": 99.86750030517578,
+            "_id": {
+              "$oid": "6615f3f6adc690afb3b9e4d8"
+            }
+          },
+          "STATE": {
+            "text": "ON,",
+            "confidence": 99.24950408935547,
+            "_id": {
+              "$oid": "6615f3f6adc690afb3b9e4d9"
+            }
+          },
+          "COUNTRY": {
+            "text": "Canada",
+            "confidence": 99.07601165771484,
+            "_id": {
+              "$oid": "6615f3f6adc690afb3b9e4da"
+            }
+          },
+          "ZIP_CODE": {
+            "text": "M5J 0A8,",
+            "confidence": 84.9087905883789,
+            "_id": {
+              "$oid": "6615f3f6adc690afb3b9e4db"
+            }
+          },
+          "CATEGORY": {
+            "text": "computer-related expenses",
+            "confidence": 100,
+            "_id": {
+              "$oid": "6615f3f6adc690afb3b9e4dc"
+            }
+          },
+          "_id": {
+            "$oid": "6615f3e9adc690afb3b9e365"
+          }
+        },
+        {
+          "FILE_PAGE": {
+            "text": "1",
+            "confidence": 100,
+            "_id": {
+              "$oid": "6614c4b2fcb97425fce6ff9c"
+            }
+          },
+          "FILE_NAME": {
+            "text": "Invoice-4DB6F003-0012.pdf",
+            "confidence": 100,
+            "_id": {
+              "$oid": "6614c4b2fcb97425fce6ff9d"
+            }
+          },
+          "INVOICE_RECEIPT_DATE": {
+            "text": "2023-12-01",
+            "confidence": 100,
+            "_id": {
+              "$oid": "6614c4b2fcb97425fce6ff9e"
+            }
+          },
+          "VENDOR_NAME": {
+            "text": "Railway",
+            "confidence": 98.87451934814453,
+            "_id": {
+              "$oid": "6614c4b2fcb97425fce6ff9f"
+            }
+          },
+          "VENDOR_ADDRESS": {
+            "text": "Railway\n548 Market St\nPMB 68956\nSan Francisco, California 94104\nUnited States",
+            "confidence": 99.18936920166016,
+            "_id": {
+              "$oid": "6614c4b2fcb97425fce6ffa0"
+            }
+          },
+          "TOTAL": {
+            "text": "$5.11 USD",
+            "confidence": 99.39974212646484,
+            "_id": {
+              "$oid": "6614c4b2fcb97425fce6ffa1"
+            }
+          },
+          "SUBTOTAL": {
+            "text": "$10.11",
+            "confidence": 99.99639129638672,
+            "_id": {
+              "$oid": "6614c4b2fcb97425fce6ffa2"
+            }
+          },
+          "TAX": {
+            "text": "d3",
+            "confidence": 100,
+            "_id": {
+              "$oid": "6614c4b2fcb97425fce6ffa9"
+            }
+          },
+          "VENDOR_PHONE": {
+            "text": "",
+            "confidence": 0,
+            "_id": {
+              "$oid": "6614c4b2fcb97425fce6ffaa"
+            }
+          },
+          "STREET": {
+            "text": "548 Market St\nPMB 68956",
+            "confidence": 99.6123046875,
+            "_id": {
+              "$oid": "6614c4b2fcb97425fce6ffa3"
+            }
+          },
+          "CITY": {
+            "text": "San Francisco,",
+            "confidence": 99.99398803710938,
+            "_id": {
+              "$oid": "6614c4b2fcb97425fce6ffa4"
+            }
+          },
+          "STATE": {
+            "text": "California",
+            "confidence": 99.99779510498047,
+            "_id": {
+              "$oid": "6614c4b2fcb97425fce6ffa5"
+            }
+          },
+          "COUNTRY": {
+            "text": "United States",
+            "confidence": 99.99909210205078,
+            "_id": {
+              "$oid": "6614c4b2fcb97425fce6ffa6"
+            }
+          },
+          "ZIP_CODE": {
+            "text": "94104",
+            "confidence": 99.98889923095703,
+            "_id": {
+              "$oid": "6614c4b2fcb97425fce6ffa7"
+            }
+          },
+          "CATEGORY": {
+            "text": "office expense",
+            "confidence": 100,
+            "_id": {
+              "$oid": "6614c4b2fcb97425fce6ffa8"
+            }
+          },
+          "_id": {
+            "$oid": "6614c4b2fcb97425fce6ff9b"
+          }
+        },
+        {
+          "FILE_PAGE": {
+            "text": "1",
+            "confidence": 100,
+            "_id": {
+              "$oid": "6615f863adc690afb3b9ed9b"
+            }
+          },
+          "FILE_NAME": {
+            "text": "Invoice-4DB6F003-0012.pdf",
+            "confidence": 100,
+            "_id": {
+              "$oid": "6615f863adc690afb3b9ed9c"
+            }
+          },
+          "INVOICE_RECEIPT_DATE": {
+            "text": "2023-12-01",
+            "confidence": 100,
+            "_id": {
+              "$oid": "6615f863adc690afb3b9ed9d"
+            }
+          },
+          "VENDOR_NAME": {
+            "text": "Railway",
+            "confidence": 98.83282470703125,
+            "_id": {
+              "$oid": "6615f863adc690afb3b9ed9e"
+            }
+          },
+          "VENDOR_ADDRESS": {
+            "text": "Railway\n548 Market St\nPMB 68956\nSan Francisco, California 94104\nUnited States",
+            "confidence": 99.1926040649414,
+            "_id": {
+              "$oid": "6615f863adc690afb3b9ed9f"
+            }
+          },
+          "TOTAL": {
+            "text": "$5.11 USD",
+            "confidence": 99.39805603027344,
+            "_id": {
+              "$oid": "6615f863adc690afb3b9eda0"
+            }
+          },
+          "SUBTOTAL": {
+            "text": "$10.11",
+            "confidence": 99.99630737304688,
+            "_id": {
+              "$oid": "6615f863adc690afb3b9eda1"
+            }
+          },
+          "TAX": {
+            "text": "08",
+            "confidence": 100,
+            "_id": {
+              "$oid": "6615f863adc690afb3b9eda2"
+            }
+          },
+          "VENDOR_PHONE": {
+            "text": "",
+            "confidence": 0,
+            "_id": {
+              "$oid": "6615f863adc690afb3b9eda9"
+            }
+          },
+          "STREET": {
+            "text": "548 Market St\nPMB 68956",
+            "confidence": 99.6182632446289,
+            "_id": {
+              "$oid": "6615f863adc690afb3b9eda3"
+            }
+          },
+          "CITY": {
+            "text": "San Francisco,",
+            "confidence": 99.99407196044922,
+            "_id": {
+              "$oid": "6615f863adc690afb3b9eda4"
+            }
+          },
+          "STATE": {
+            "text": "California",
+            "confidence": 99.99791717529297,
+            "_id": {
+              "$oid": "6615f863adc690afb3b9eda5"
+            }
+          },
+          "COUNTRY": {
+            "text": "United States",
+            "confidence": 99.99911499023438,
+            "_id": {
+              "$oid": "6615f863adc690afb3b9eda6"
+            }
+          },
+          "ZIP_CODE": {
+            "text": "94104",
+            "confidence": 99.98895263671875,
+            "_id": {
+              "$oid": "6615f863adc690afb3b9eda7"
+            }
+          },
+          "CATEGORY": {
+            "text": "office expense",
+            "confidence": 100,
+            "_id": {
+              "$oid": "6615f863adc690afb3b9eda8"
+            }
+          },
+          "_id": {
+            "$oid": "6615f856adc690afb3b9eccd"
+          }
+        },
+        {
+          "FILE_PAGE": {
+            "text": "1",
+            "confidence": 100,
+            "_id": {
+              "$oid": "6614bd57e8f988884035e57f"
+            }
+          },
+          "FILE_NAME": {
+            "text": "Invoice-4DB6F003-0007.pdf",
+            "confidence": 100,
+            "_id": {
+              "$oid": "6614bd57e8f988884035e580"
+            }
+          },
+          "INVOICE_RECEIPT_DATE": {
+            "text": "2023-07-29",
+            "confidence": 100,
+            "_id": {
+              "$oid": "6614bd57e8f988884035e581"
+            }
+          },
+          "VENDOR_NAME": {
+            "text": "Railway",
+            "confidence": 99.42776489257812,
+            "_id": {
+              "$oid": "6614bd57e8f988884035e582"
+            }
+          },
+          "VENDOR_ADDRESS": {
+            "text": "Railway\n2135 California Street\nApt A\nSan Francisco, California 94115\nUnited States",
+            "confidence": 99.92352294921875,
+            "_id": {
+              "$oid": "6614bd57e8f988884035e583"
+            }
+          },
+          "TOTAL": {
+            "text": "$5.00 USD",
+            "confidence": 99.13706970214844,
+            "_id": {
+              "$oid": "6614bd57e8f988884035e584"
+            }
+          },
+          "SUBTOTAL": {
+            "text": "$7.57",
+            "confidence": 99.9962158203125,
+            "_id": {
+              "$oid": "6614bd57e8f988884035e585"
+            }
+          },
+          "TAX": {
+            "text": "89",
+            "confidence": 100,
+            "_id": {
+              "$oid": "6614bd57e8f988884035e58c"
+            }
+          },
+          "VENDOR_PHONE": {
+            "text": "",
+            "confidence": 0,
+            "_id": {
+              "$oid": "6614bd57e8f988884035e58d"
+            }
+          },
+          "STREET": {
+            "text": "2135 California Street\nApt A",
+            "confidence": 98.23939514160156,
+            "_id": {
+              "$oid": "6614bd57e8f988884035e586"
+            }
+          },
+          "CITY": {
+            "text": "San Francisco,",
+            "confidence": 99.99353790283203,
+            "_id": {
+              "$oid": "6614bd57e8f988884035e587"
+            }
+          },
+          "STATE": {
+            "text": "California",
+            "confidence": 99.99713897705078,
+            "_id": {
+              "$oid": "6614bd57e8f988884035e588"
+            }
+          },
+          "COUNTRY": {
+            "text": "United States",
+            "confidence": 99.99858856201172,
+            "_id": {
+              "$oid": "6614bd57e8f988884035e589"
+            }
+          },
+          "ZIP_CODE": {
+            "text": "94115",
+            "confidence": 99.98635864257812,
+            "_id": {
+              "$oid": "6614bd57e8f988884035e58a"
+            }
+          },
+          "CATEGORY": {
+            "text": "utilities",
+            "confidence": 100,
+            "_id": {
+              "$oid": "6614bd57e8f988884035e58b"
+            }
+          },
+          "_id": {
+            "$oid": "6614bd57e8f988884035e57e"
+          }
+        },
+        {
+          "FILE_PAGE": {
+            "text": "1",
+            "confidence": 100,
+            "_id": {
+              "$oid": "6615feceadc690afb3b9efcf"
+            }
+          },
+          "FILE_NAME": {
+            "text": "Invoice-4DB6F003-0007.pdf",
+            "confidence": 100,
+            "_id": {
+              "$oid": "6615feceadc690afb3b9efd0"
+            }
+          },
+          "INVOICE_RECEIPT_DATE": {
+            "text": "2023-07-28",
+            "confidence": 100,
+            "_id": {
+              "$oid": "6615feceadc690afb3b9efd1"
+            }
+          },
+          "VENDOR_NAME": {
+            "text": "Railway",
+            "confidence": 99.42776489257812,
+            "_id": {
+              "$oid": "6615feceadc690afb3b9efd2"
+            }
+          },
+          "VENDOR_ADDRESS": {
+            "text": "Railway\n2135 California Street\nApt A\nSan Francisco, California 94115\nUnited States",
+            "confidence": 99.92352294921875,
+            "_id": {
+              "$oid": "6615feceadc690afb3b9efd3"
+            }
+          },
+          "TOTAL": {
+            "text": "$5.00 USD",
+            "confidence": 99.13706970214844,
+            "_id": {
+              "$oid": "6615feceadc690afb3b9efd4"
+            }
+          },
+          "SUBTOTAL": {
+            "text": "$7.57",
+            "confidence": 99.9962158203125,
+            "_id": {
+              "$oid": "6615feceadc690afb3b9efd5"
+            }
+          },
+          "TAX": {
+            "text": "0",
+            "confidence": 100,
+            "_id": {
+              "$oid": "6615feceadc690afb3b9efdc"
+            }
+          },
+          "VENDOR_PHONE": {
+            "text": "",
+            "confidence": 0,
+            "_id": {
+              "$oid": "6615feceadc690afb3b9efdd"
+            }
+          },
+          "STREET": {
+            "text": "2135 California Street\nApt A",
+            "confidence": 98.23939514160156,
+            "_id": {
+              "$oid": "6615feceadc690afb3b9efd6"
+            }
+          },
+          "CITY": {
+            "text": "San Francisco,",
+            "confidence": 99.99353790283203,
+            "_id": {
+              "$oid": "6615feceadc690afb3b9efd7"
+            }
+          },
+          "STATE": {
+            "text": "California",
+            "confidence": 99.99713897705078,
+            "_id": {
+              "$oid": "6615feceadc690afb3b9efd8"
+            }
+          },
+          "COUNTRY": {
+            "text": "United States",
+            "confidence": 99.99858856201172,
+            "_id": {
+              "$oid": "6615feceadc690afb3b9efd9"
+            }
+          },
+          "ZIP_CODE": {
+            "text": "94115",
+            "confidence": 99.98635864257812,
+            "_id": {
+              "$oid": "6615feceadc690afb3b9efda"
+            }
+          },
+          "CATEGORY": {
+            "text": "utilities",
+            "confidence": 100,
+            "_id": {
+              "$oid": "6615feceadc690afb3b9efdb"
+            }
+          },
+          "_id": {
+            "$oid": "6615feceadc690afb3b9efcd"
+          }
+        },
+        {
+          "FILE_PAGE": {
+            "text": "1",
+            "confidence": 100,
+            "_id": {
+              "$oid": "6615de706b75605ca4afc80e"
+            }
+          },
+          "FILE_NAME": {
+            "text": "CAIN24-854879.pdf",
+            "confidence": 100,
+            "_id": {
+              "$oid": "6615de706b75605ca4afc80f"
+            }
+          },
+          "INVOICE_RECEIPT_DATE": {
+            "text": "2024-04-03",
+            "confidence": 100,
+            "_id": {
+              "$oid": "6615de706b75605ca4afc810"
+            }
+          },
+          "VENDOR_NAME": {
+            "text": "aws",
+            "confidence": 97.96258544921875,
+            "_id": {
+              "$oid": "6615de706b75605ca4afc811"
+            }
+          },
+          "VENDOR_ADDRESS": {
+            "text": "Amazon Web Services Canada, Inc.\n120 Bremner Blvd. 26th Floor, Toronto, ON, M5J 0A8, Canada",
+            "confidence": 88.15337371826172,
+            "_id": {
+              "$oid": "6615de706b75605ca4afc812"
+            }
+          },
+          "TOTAL": {
+            "text": "CAD 9.19",
+            "confidence": 97.26666259765625,
+            "_id": {
+              "$oid": "6615de706b75605ca4afc813"
+            }
+          },
+          "SUBTOTAL": {
+            "text": "CAD 8.13",
+            "confidence": 83.8382568359375,
+            "_id": {
+              "$oid": "6615de706b75605ca4afc814"
+            }
+          },
+          "TAX": {
+            "text": "CAD 1.05",
+            "confidence": 96.07051849365234,
+            "_id": {
+              "$oid": "6615de706b75605ca4afc815"
+            }
+          },
+          "VENDOR_PHONE": {
+            "text": "",
+            "confidence": 0,
+            "_id": {
+              "$oid": "6615de706b75605ca4afc81c"
+            }
+          },
+          "STREET": {
+            "text": "120 Bremner Blvd. 26th Floor,",
+            "confidence": 99.71393585205078,
+            "_id": {
+              "$oid": "6615de706b75605ca4afc816"
+            }
+          },
+          "CITY": {
+            "text": "Toronto,",
+            "confidence": 99.86750030517578,
+            "_id": {
+              "$oid": "6615de706b75605ca4afc817"
+            }
+          },
+          "STATE": {
+            "text": "ON,",
+            "confidence": 99.24950408935547,
+            "_id": {
+              "$oid": "6615de706b75605ca4afc818"
+            }
+          },
+          "COUNTRY": {
+            "text": "Canada",
+            "confidence": 99.07601165771484,
+            "_id": {
+              "$oid": "6615de706b75605ca4afc819"
+            }
+          },
+          "ZIP_CODE": {
+            "text": "M5J 0A8,",
+            "confidence": 84.9087905883789,
+            "_id": {
+              "$oid": "6615de706b75605ca4afc81a"
+            }
+          },
+          "CATEGORY": {
+            "text": "computer-related expenses",
+            "confidence": 100,
+            "_id": {
+              "$oid": "6615de706b75605ca4afc81b"
+            }
+          },
+          "_id": {
+            "$oid": "6615de706b75605ca4afc80d"
+          }
+        },
+        {
+          "FILE_PAGE": {
+            "text": "1",
+            "confidence": 100,
+            "_id": {
+              "$oid": "6615deb16b75605ca4afc838"
+            }
+          },
+          "FILE_NAME": {
+            "text": "CAIN24-854879.pdf",
+            "confidence": 100,
+            "_id": {
+              "$oid": "6615deb16b75605ca4afc839"
+            }
+          },
+          "INVOICE_RECEIPT_DATE": {
+            "text": "2024-04-03",
+            "confidence": 100,
+            "_id": {
+              "$oid": "6615deb16b75605ca4afc83a"
+            }
+          },
+          "VENDOR_NAME": {
+            "text": "azure",
+            "confidence": 97.96258544921875,
+            "_id": {
+              "$oid": "6615deb16b75605ca4afc83b"
+            }
+          },
+          "VENDOR_ADDRESS": {
+            "text": "Amazon Web Services Canada, Inc.\n120 Bremner Blvd. 26th Floor, Toronto, ON, M5J 0A8, Canada",
+            "confidence": 88.15337371826172,
+            "_id": {
+              "$oid": "6615deb16b75605ca4afc83c"
+            }
+          },
+          "TOTAL": {
+            "text": "CAD 9.19d",
+            "confidence": 97.26666259765625,
+            "_id": {
+              "$oid": "6615deb16b75605ca4afc83d"
+            }
+          },
+          "SUBTOTAL": {
+            "text": "CAD 8.13",
+            "confidence": 83.8382568359375,
+            "_id": {
+              "$oid": "6615deb16b75605ca4afc83e"
+            }
+          },
+          "TAX": {
+            "text": "CAD 1.05",
+            "confidence": 96.07051849365234,
+            "_id": {
+              "$oid": "6615deb16b75605ca4afc83f"
+            }
+          },
+          "VENDOR_PHONE": {
+            "text": "",
+            "confidence": 0,
+            "_id": {
+              "$oid": "6615deb16b75605ca4afc846"
+            }
+          },
+          "STREET": {
+            "text": "120 Bremner Blvd. 26th Floor,",
+            "confidence": 99.71393585205078,
+            "_id": {
+              "$oid": "6615deb16b75605ca4afc840"
+            }
+          },
+          "CITY": {
+            "text": "Toronto,",
+            "confidence": 99.86750030517578,
+            "_id": {
+              "$oid": "6615deb16b75605ca4afc841"
+            }
+          },
+          "STATE": {
+            "text": "ON,",
+            "confidence": 99.24950408935547,
+            "_id": {
+              "$oid": "6615deb16b75605ca4afc842"
+            }
+          },
+          "COUNTRY": {
+            "text": "Canada",
+            "confidence": 99.07601165771484,
+            "_id": {
+              "$oid": "6615deb16b75605ca4afc843"
+            }
+          },
+          "ZIP_CODE": {
+            "text": "M5J 0A8,",
+            "confidence": 84.9087905883789,
+            "_id": {
+              "$oid": "6615deb16b75605ca4afc844"
+            }
+          },
+          "CATEGORY": {
+            "text": "computer-related expenses",
+            "confidence": 100,
+            "_id": {
+              "$oid": "6615deb16b75605ca4afc845"
+            }
+          },
+          "_id": {
+            "$oid": "6615deb16b75605ca4afc837"
+          }
+        },
+        {
+          "FILE_PAGE": {
+            "text": "1",
+            "confidence": 100,
+            "_id": {
+              "$oid": "6615df671ba1ba592e487791"
+            }
+          },
+          "FILE_NAME": {
+            "text": "CAIN24-854879.pdf",
+            "confidence": 100,
+            "_id": {
+              "$oid": "6615df671ba1ba592e487792"
+            }
+          },
+          "INVOICE_RECEIPT_DATE": {
+            "text": "2024-04-03",
+            "confidence": 100,
+            "_id": {
+              "$oid": "6615df671ba1ba592e487793"
+            }
+          },
+          "VENDOR_NAME": {
+            "text": "aws",
+            "confidence": 97.96258544921875,
+            "_id": {
+              "$oid": "6615df671ba1ba592e487794"
+            }
+          },
+          "VENDOR_ADDRESS": {
+            "text": "Amazon Web Services Canada, Inc.\n120 Bremner Blvd. 26th Floor, Toronto, ON, M5J 0A8, Canada",
+            "confidence": 88.15337371826172,
+            "_id": {
+              "$oid": "6615df671ba1ba592e487795"
+            }
+          },
+          "TOTAL": {
+            "text": "CAD 9.19",
+            "confidence": 97.26666259765625,
+            "_id": {
+              "$oid": "6615df671ba1ba592e487796"
+            }
+          },
+          "SUBTOTAL": {
+            "text": "CAD 8.13",
+            "confidence": 83.8382568359375,
+            "_id": {
+              "$oid": "6615df671ba1ba592e487797"
+            }
+          },
+          "TAX": {
+            "text": "CAD 1.05",
+            "confidence": 96.07051849365234,
+            "_id": {
+              "$oid": "6615df671ba1ba592e487798"
+            }
+          },
+          "VENDOR_PHONE": {
+            "text": "",
+            "confidence": 0,
+            "_id": {
+              "$oid": "6615df671ba1ba592e48779f"
+            }
+          },
+          "STREET": {
+            "text": "120 Bremner Blvd. 26th Floor,",
+            "confidence": 99.71393585205078,
+            "_id": {
+              "$oid": "6615df671ba1ba592e487799"
+            }
+          },
+          "CITY": {
+            "text": "Toronto,",
+            "confidence": 99.86750030517578,
+            "_id": {
+              "$oid": "6615df671ba1ba592e48779a"
+            }
+          },
+          "STATE": {
+            "text": "ON,",
+            "confidence": 99.24950408935547,
+            "_id": {
+              "$oid": "6615df671ba1ba592e48779b"
+            }
+          },
+          "COUNTRY": {
+            "text": "Canada",
+            "confidence": 99.07601165771484,
+            "_id": {
+              "$oid": "6615df671ba1ba592e48779c"
+            }
+          },
+          "ZIP_CODE": {
+            "text": "M5J 0A8,",
+            "confidence": 84.9087905883789,
+            "_id": {
+              "$oid": "6615df671ba1ba592e48779d"
+            }
+          },
+          "CATEGORY": {
+            "text": "computer-related expenses",
+            "confidence": 100,
+            "_id": {
+              "$oid": "6615df671ba1ba592e48779e"
+            }
+          },
+          "_id": {
+            "$oid": "6615df671ba1ba592e487790"
+          }
+        },
+        {
+          "FILE_PAGE": {
+            "text": "1",
+            "confidence": 100,
+            "_id": {
+              "$oid": "6615e21e1ba1ba592e4877d8"
+            }
+          },
+          "FILE_NAME": {
+            "text": "CAIN24-854879.pdf",
+            "confidence": 100,
+            "_id": {
+              "$oid": "6615e21e1ba1ba592e4877d9"
+            }
+          },
+          "INVOICE_RECEIPT_DATE": {
+            "text": "2024-04-03",
+            "confidence": 100,
+            "_id": {
+              "$oid": "6615e21e1ba1ba592e4877da"
+            }
+          },
+          "VENDOR_NAME": {
+            "text": "aws",
+            "confidence": 97.96258544921875,
+            "_id": {
+              "$oid": "6615e21e1ba1ba592e4877db"
+            }
+          },
+          "VENDOR_ADDRESS": {
+            "text": "Amazon Web Services Canada, Inc.\n120 Bremner Blvd. 26th Floor, Toronto, ON, M5J 0A8, Canada",
+            "confidence": 88.15337371826172,
+            "_id": {
+              "$oid": "6615e21e1ba1ba592e4877dc"
+            }
+          },
+          "TOTAL": {
+            "text": "CAD 9.19",
+            "confidence": 97.26666259765625,
+            "_id": {
+              "$oid": "6615e21e1ba1ba592e4877dd"
+            }
+          },
+          "SUBTOTAL": {
+            "text": "CAD 8.13",
+            "confidence": 83.8382568359375,
+            "_id": {
+              "$oid": "6615e21e1ba1ba592e4877de"
+            }
+          },
+          "TAX": {
+            "text": "CAD 1.05",
+            "confidence": 96.07051849365234,
+            "_id": {
+              "$oid": "6615e21e1ba1ba592e4877df"
+            }
+          },
+          "VENDOR_PHONE": {
+            "text": "3",
+            "confidence": 100,
+            "_id": {
+              "$oid": "6615e21e1ba1ba592e4877e6"
+            }
+          },
+          "STREET": {
+            "text": "120 Bremner Blvd. 26th Floor,",
+            "confidence": 99.71393585205078,
+            "_id": {
+              "$oid": "6615e21e1ba1ba592e4877e0"
+            }
+          },
+          "CITY": {
+            "text": "Toronto,",
+            "confidence": 99.86750030517578,
+            "_id": {
+              "$oid": "6615e21e1ba1ba592e4877e1"
+            }
+          },
+          "STATE": {
+            "text": "ON,",
+            "confidence": 99.24950408935547,
+            "_id": {
+              "$oid": "6615e21e1ba1ba592e4877e2"
+            }
+          },
+          "COUNTRY": {
+            "text": "Canada",
+            "confidence": 99.07601165771484,
+            "_id": {
+              "$oid": "6615e21e1ba1ba592e4877e3"
+            }
+          },
+          "ZIP_CODE": {
+            "text": "M5J 0A8,",
+            "confidence": 84.9087905883789,
+            "_id": {
+              "$oid": "6615e21e1ba1ba592e4877e4"
+            }
+          },
+          "CATEGORY": {
+            "text": "computer-related expenses",
+            "confidence": 100,
+            "_id": {
+              "$oid": "6615e21e1ba1ba592e4877e5"
+            }
+          },
+          "_id": {
+            "$oid": "6615e21e1ba1ba592e4877d7"
+          }
+        },
+        {
+          "FILE_PAGE": {
+            "text": "1",
+            "confidence": 100,
+            "_id": {
+              "$oid": "6615f10f6658da83865f3d88"
+            }
+          },
+          "FILE_NAME": {
+            "text": "CAIN24-854879.pdf",
+            "confidence": 100,
+            "_id": {
+              "$oid": "6615f10f6658da83865f3d89"
+            }
+          },
+          "INVOICE_RECEIPT_DATE": {
+            "text": "2024-04-03",
+            "confidence": 100,
+            "_id": {
+              "$oid": "6615f10f6658da83865f3d8a"
+            }
+          },
+          "VENDOR_NAME": {
+            "text": "aws",
+            "confidence": 97.96258544921875,
+            "_id": {
+              "$oid": "6615f10f6658da83865f3d8b"
+            }
+          },
+          "VENDOR_ADDRESS": {
+            "text": "Amazon Web Services Canada, Inc.\n120 Bremner Blvd. 26th Floor, Toronto, ON, M5J 0A8, Canada",
+            "confidence": 88.15337371826172,
+            "_id": {
+              "$oid": "6615f10f6658da83865f3d8c"
+            }
+          },
+          "TOTAL": {
+            "text": "CAD 9.19",
+            "confidence": 97.26666259765625,
+            "_id": {
+              "$oid": "6615f10f6658da83865f3d8d"
+            }
+          },
+          "SUBTOTAL": {
+            "text": "CAD 8.13",
+            "confidence": 83.8382568359375,
+            "_id": {
+              "$oid": "6615f10f6658da83865f3d8e"
+            }
+          },
+          "TAX": {
+            "text": "CAD 1.05",
+            "confidence": 96.07051849365234,
+            "_id": {
+              "$oid": "6615f10f6658da83865f3d8f"
+            }
+          },
+          "VENDOR_PHONE": {
+            "text": "",
+            "confidence": 0,
+            "_id": {
+              "$oid": "6615f10f6658da83865f3d96"
+            }
+          },
+          "STREET": {
+            "text": "120 Bremner Blvd. 26th Floor,",
+            "confidence": 99.71393585205078,
+            "_id": {
+              "$oid": "6615f10f6658da83865f3d90"
+            }
+          },
+          "CITY": {
+            "text": "Toronto,",
+            "confidence": 99.86750030517578,
+            "_id": {
+              "$oid": "6615f10f6658da83865f3d91"
+            }
+          },
+          "STATE": {
+            "text": "ON,",
+            "confidence": 99.24950408935547,
+            "_id": {
+              "$oid": "6615f10f6658da83865f3d92"
+            }
+          },
+          "COUNTRY": {
+            "text": "Canada",
+            "confidence": 99.07601165771484,
+            "_id": {
+              "$oid": "6615f10f6658da83865f3d93"
+            }
+          },
+          "ZIP_CODE": {
+            "text": "M5J 0A8,",
+            "confidence": 84.9087905883789,
+            "_id": {
+              "$oid": "6615f10f6658da83865f3d94"
+            }
+          },
+          "CATEGORY": {
+            "text": "computer-related expenses",
+            "confidence": 100,
+            "_id": {
+              "$oid": "6615f10f6658da83865f3d95"
+            }
+          },
+          "_id": {
+            "$oid": "6615f10f6658da83865f3d87"
+          }
+        },
+        {
+          "FILE_PAGE": {
+            "text": "1",
+            "confidence": 100,
+            "_id": {
+              "$oid": "6615f14a6658da83865f3dc9"
+            }
+          },
+          "FILE_NAME": {
+            "text": "CAIN24-854879.pdf",
+            "confidence": 100,
+            "_id": {
+              "$oid": "6615f14a6658da83865f3dca"
+            }
+          },
+          "INVOICE_RECEIPT_DATE": {
+            "text": "2024-04-03",
+            "confidence": 100,
+            "_id": {
+              "$oid": "6615f14a6658da83865f3dcb"
+            }
+          },
+          "VENDOR_NAME": {
+            "text": "azure",
+            "confidence": 97.96258544921875,
+            "_id": {
+              "$oid": "6615f14a6658da83865f3dcc"
+            }
+          },
+          "VENDOR_ADDRESS": {
+            "text": "Amazon Web Services Canada, Inc.\n120 Bremner Blvd. 26th Floor, Toronto, ON, M5J 0A8, Canada",
+            "confidence": 88.15337371826172,
+            "_id": {
+              "$oid": "6615f14a6658da83865f3dcd"
+            }
+          },
+          "TOTAL": {
+            "text": "CAD 9.19",
+            "confidence": 97.26666259765625,
+            "_id": {
+              "$oid": "6615f14a6658da83865f3dce"
+            }
+          },
+          "SUBTOTAL": {
+            "text": "CAD 8.13",
+            "confidence": 83.8382568359375,
+            "_id": {
+              "$oid": "6615f14a6658da83865f3dcf"
+            }
+          },
+          "TAX": {
+            "text": "CAD 1.05",
+            "confidence": 96.07051849365234,
+            "_id": {
+              "$oid": "6615f14a6658da83865f3dd0"
+            }
+          },
+          "VENDOR_PHONE": {
+            "text": "",
+            "confidence": 0,
+            "_id": {
+              "$oid": "6615f14a6658da83865f3dd7"
+            }
+          },
+          "STREET": {
+            "text": "120 Bremner Blvd. 26th Floor,",
+            "confidence": 99.71393585205078,
+            "_id": {
+              "$oid": "6615f14a6658da83865f3dd1"
+            }
+          },
+          "CITY": {
+            "text": "Toronto,",
+            "confidence": 99.86750030517578,
+            "_id": {
+              "$oid": "6615f14a6658da83865f3dd2"
+            }
+          },
+          "STATE": {
+            "text": "ON,",
+            "confidence": 99.24950408935547,
+            "_id": {
+              "$oid": "6615f14a6658da83865f3dd3"
+            }
+          },
+          "COUNTRY": {
+            "text": "Canada",
+            "confidence": 99.07601165771484,
+            "_id": {
+              "$oid": "6615f14a6658da83865f3dd4"
+            }
+          },
+          "ZIP_CODE": {
+            "text": "M5J 0A8,",
+            "confidence": 84.9087905883789,
+            "_id": {
+              "$oid": "6615f14a6658da83865f3dd5"
+            }
+          },
+          "CATEGORY": {
+            "text": "computer-related expenses",
+            "confidence": 100,
+            "_id": {
+              "$oid": "6615f14a6658da83865f3dd6"
+            }
+          },
+          "_id": {
+            "$oid": "6615f14a6658da83865f3dc8"
+          }
+        },
+        {
+          "FILE_PAGE": {
+            "text": "1",
+            "confidence": 100,
+            "_id": {
+              "$oid": "6615f3d1adc690afb3b9e327"
+            }
+          },
+          "FILE_NAME": {
+            "text": "CAIN24-854879.pdf",
+            "confidence": 100,
+            "_id": {
+              "$oid": "6615f3d1adc690afb3b9e328"
+            }
+          },
+          "INVOICE_RECEIPT_DATE": {
+            "text": "2024-04-03",
+            "confidence": 100,
+            "_id": {
+              "$oid": "6615f3d1adc690afb3b9e329"
+            }
+          },
+          "VENDOR_NAME": {
+            "text": "aws",
+            "confidence": 97.96258544921875,
+            "_id": {
+              "$oid": "6615f3d1adc690afb3b9e32a"
+            }
+          },
+          "VENDOR_ADDRESS": {
+            "text": "Amazon Web Services Canada, Inc.\n120 Bremner Blvd. 26th Floor, Toronto, ON, M5J 0A8, Canada",
+            "confidence": 88.15337371826172,
+            "_id": {
+              "$oid": "6615f3d1adc690afb3b9e32b"
+            }
+          },
+          "TOTAL": {
+            "text": "CAD 9.19",
+            "confidence": 97.26666259765625,
+            "_id": {
+              "$oid": "6615f3d1adc690afb3b9e32c"
+            }
+          },
+          "SUBTOTAL": {
+            "text": "CAD 8.13",
+            "confidence": 83.8382568359375,
+            "_id": {
+              "$oid": "6615f3d1adc690afb3b9e32d"
+            }
+          },
+          "TAX": {
+            "text": "CAD 1.05",
+            "confidence": 96.07051849365234,
+            "_id": {
+              "$oid": "6615f3d1adc690afb3b9e32e"
+            }
+          },
+          "VENDOR_PHONE": {
+            "text": "",
+            "confidence": 0,
+            "_id": {
+              "$oid": "6615f3d1adc690afb3b9e335"
+            }
+          },
+          "STREET": {
+            "text": "120 Bremner Blvd. 26th Floor,",
+            "confidence": 99.71393585205078,
+            "_id": {
+              "$oid": "6615f3d1adc690afb3b9e32f"
+            }
+          },
+          "CITY": {
+            "text": "Toronto,",
+            "confidence": 99.86750030517578,
+            "_id": {
+              "$oid": "6615f3d1adc690afb3b9e330"
+            }
+          },
+          "STATE": {
+            "text": "ON,",
+            "confidence": 99.24950408935547,
+            "_id": {
+              "$oid": "6615f3d1adc690afb3b9e331"
+            }
+          },
+          "COUNTRY": {
+            "text": "Canada",
+            "confidence": 99.07601165771484,
+            "_id": {
+              "$oid": "6615f3d1adc690afb3b9e332"
+            }
+          },
+          "ZIP_CODE": {
+            "text": "M5J 0A8,",
+            "confidence": 84.9087905883789,
+            "_id": {
+              "$oid": "6615f3d1adc690afb3b9e333"
+            }
+          },
+          "CATEGORY": {
+            "text": "computer-related expenses",
+            "confidence": 100,
+            "_id": {
+              "$oid": "6615f3d1adc690afb3b9e334"
+            }
+          },
+          "_id": {
+            "$oid": "6615f3d1adc690afb3b9e325"
+          }
+        },
+        {
+          "FILE_PAGE": {
+            "text": "1",
+            "confidence": 100,
+            "_id": {
+              "$oid": "6615febbadc690afb3b9efa1"
+            }
+          },
+          "FILE_NAME": {
+            "text": "CAIN24-854879.pdf",
+            "confidence": 100,
+            "_id": {
+              "$oid": "6615febbadc690afb3b9efa2"
+            }
+          },
+          "INVOICE_RECEIPT_DATE": {
+            "text": "2024-04-03",
+            "confidence": 100,
+            "_id": {
+              "$oid": "6615febbadc690afb3b9efa3"
+            }
+          },
+          "VENDOR_NAME": {
+            "text": "aws",
+            "confidence": 97.96258544921875,
+            "_id": {
+              "$oid": "6615febbadc690afb3b9efa4"
+            }
+          },
+          "VENDOR_ADDRESS": {
+            "text": "Amazon Web Services Canada, Inc.\n120 Bremner Blvd. 26th Floor, Toronto, ON, M5J 0A8, Canada",
+            "confidence": 88.15337371826172,
+            "_id": {
+              "$oid": "6615febbadc690afb3b9efa5"
+            }
+          },
+          "TOTAL": {
+            "text": "CAD 9.19",
+            "confidence": 97.26666259765625,
+            "_id": {
+              "$oid": "6615febbadc690afb3b9efa6"
+            }
+          },
+          "SUBTOTAL": {
+            "text": "CAD 8.13",
+            "confidence": 83.8382568359375,
+            "_id": {
+              "$oid": "6615febbadc690afb3b9efa7"
+            }
+          },
+          "TAX": {
+            "text": "CAD 1.05",
+            "confidence": 96.07051849365234,
+            "_id": {
+              "$oid": "6615febbadc690afb3b9efa8"
+            }
+          },
+          "VENDOR_PHONE": {
+            "text": "",
+            "confidence": 0,
+            "_id": {
+              "$oid": "6615febbadc690afb3b9efaf"
+            }
+          },
+          "STREET": {
+            "text": "120 Bremner Blvd. 26th Floor,",
+            "confidence": 99.71393585205078,
+            "_id": {
+              "$oid": "6615febbadc690afb3b9efa9"
+            }
+          },
+          "CITY": {
+            "text": "Toronto,",
+            "confidence": 99.86750030517578,
+            "_id": {
+              "$oid": "6615febbadc690afb3b9efaa"
+            }
+          },
+          "STATE": {
+            "text": "ON,",
+            "confidence": 99.24950408935547,
+            "_id": {
+              "$oid": "6615febbadc690afb3b9efab"
+            }
+          },
+          "COUNTRY": {
+            "text": "Canada",
+            "confidence": 99.07601165771484,
+            "_id": {
+              "$oid": "6615febbadc690afb3b9efac"
+            }
+          },
+          "ZIP_CODE": {
+            "text": "M5J 0A8,",
+            "confidence": 84.9087905883789,
+            "_id": {
+              "$oid": "6615febbadc690afb3b9efad"
+            }
+          },
+          "CATEGORY": {
+            "text": "computer-related expenses",
+            "confidence": 100,
+            "_id": {
+              "$oid": "6615febbadc690afb3b9efae"
+            }
+          },
+          "_id": {
+            "$oid": "6615febbadc690afb3b9ef9f"
+          }
+        },
+        {
+          "FILE_PAGE": {
+            "text": "1",
+            "confidence": 100,
+            "_id": {
+              "$oid": "6615ff67adc690afb3b9f151"
+            }
+          },
+          "FILE_NAME": {
+            "text": "CAIN24-854879.pdf",
+            "confidence": 100,
+            "_id": {
+              "$oid": "6615ff67adc690afb3b9f152"
+            }
+          },
+          "INVOICE_RECEIPT_DATE": {
+            "text": "2024-04-03",
+            "confidence": 100,
+            "_id": {
+              "$oid": "6615ff67adc690afb3b9f153"
+            }
+          },
+          "VENDOR_NAME": {
+            "text": "aws",
+            "confidence": 97.96258544921875,
+            "_id": {
+              "$oid": "6615ff67adc690afb3b9f154"
+            }
+          },
+          "VENDOR_ADDRESS": {
+            "text": "Amazon Web Services Canada, Inc.\n120 Bremner Blvd. 26th Floor, Toronto, ON, M5J 0A8, Canada",
+            "confidence": 88.15337371826172,
+            "_id": {
+              "$oid": "6615ff67adc690afb3b9f155"
+            }
+          },
+          "TOTAL": {
+            "text": "CAD 9.19",
+            "confidence": 97.26666259765625,
+            "_id": {
+              "$oid": "6615ff67adc690afb3b9f156"
+            }
+          },
+          "SUBTOTAL": {
+            "text": "CAD 8.13",
+            "confidence": 83.8382568359375,
+            "_id": {
+              "$oid": "6615ff67adc690afb3b9f157"
+            }
+          },
+          "TAX": {
+            "text": "CAD 1.05",
+            "confidence": 96.07051849365234,
+            "_id": {
+              "$oid": "6615ff67adc690afb3b9f158"
+            }
+          },
+          "VENDOR_PHONE": {
+            "text": "",
+            "confidence": 0,
+            "_id": {
+              "$oid": "6615ff67adc690afb3b9f15f"
+            }
+          },
+          "STREET": {
+            "text": "120 Bremner Blvd. 26th Floor,",
+            "confidence": 99.71393585205078,
+            "_id": {
+              "$oid": "6615ff67adc690afb3b9f159"
+            }
+          },
+          "CITY": {
+            "text": "Toronto,",
+            "confidence": 99.86750030517578,
+            "_id": {
+              "$oid": "6615ff67adc690afb3b9f15a"
+            }
+          },
+          "STATE": {
+            "text": "ON,",
+            "confidence": 99.24950408935547,
+            "_id": {
+              "$oid": "6615ff67adc690afb3b9f15b"
+            }
+          },
+          "COUNTRY": {
+            "text": "Canada",
+            "confidence": 99.07601165771484,
+            "_id": {
+              "$oid": "6615ff67adc690afb3b9f15c"
+            }
+          },
+          "ZIP_CODE": {
+            "text": "M5J 0A8,",
+            "confidence": 84.9087905883789,
+            "_id": {
+              "$oid": "6615ff67adc690afb3b9f15d"
+            }
+          },
+          "CATEGORY": {
+            "text": "computer-related expenses",
+            "confidence": 100,
+            "_id": {
+              "$oid": "6615ff67adc690afb3b9f15e"
+            }
+          },
+          "_id": {
+            "$oid": "6615ff67adc690afb3b9f14f"
+          }
+        },
+        {
+          "FILE_PAGE": {
+            "text": "1",
+            "confidence": 100,
+            "_id": {
+              "$oid": "66160256adc690afb3b9f31f"
+            }
+          },
+          "FILE_NAME": {
+            "text": "CAIN24-854879.pdf",
+            "confidence": 100,
+            "_id": {
+              "$oid": "66160256adc690afb3b9f320"
+            }
+          },
+          "INVOICE_RECEIPT_DATE": {
+            "text": "2024-04-03",
+            "confidence": 100,
+            "_id": {
+              "$oid": "66160256adc690afb3b9f321"
+            }
+          },
+          "VENDOR_NAME": {
+            "text": "aws",
+            "confidence": 97.96258544921875,
+            "_id": {
+              "$oid": "66160256adc690afb3b9f322"
+            }
+          },
+          "VENDOR_ADDRESS": {
+            "text": "Amazon Web Services Canada, Inc.\n120 Bremner Blvd. 26th Floor, Toronto, ON, M5J 0A8, Canada",
+            "confidence": 88.15337371826172,
+            "_id": {
+              "$oid": "66160256adc690afb3b9f323"
+            }
+          },
+          "TOTAL": {
+            "text": "CAD 9.19",
+            "confidence": 97.26666259765625,
+            "_id": {
+              "$oid": "66160256adc690afb3b9f324"
+            }
+          },
+          "SUBTOTAL": {
+            "text": "CAD 8.13",
+            "confidence": 83.8382568359375,
+            "_id": {
+              "$oid": "66160256adc690afb3b9f325"
+            }
+          },
+          "TAX": {
+            "text": "CAD 1.05",
+            "confidence": 96.07051849365234,
+            "_id": {
+              "$oid": "66160256adc690afb3b9f326"
+            }
+          },
+          "VENDOR_PHONE": {
+            "text": "",
+            "confidence": 0,
+            "_id": {
+              "$oid": "66160256adc690afb3b9f32d"
+            }
+          },
+          "STREET": {
+            "text": "120 Bremner Blvd. 26th Floor,",
+            "confidence": 99.71393585205078,
+            "_id": {
+              "$oid": "66160256adc690afb3b9f327"
+            }
+          },
+          "CITY": {
+            "text": "Toronto,",
+            "confidence": 99.86750030517578,
+            "_id": {
+              "$oid": "66160256adc690afb3b9f328"
+            }
+          },
+          "STATE": {
+            "text": "ON,",
+            "confidence": 99.24950408935547,
+            "_id": {
+              "$oid": "66160256adc690afb3b9f329"
+            }
+          },
+          "COUNTRY": {
+            "text": "Canada",
+            "confidence": 99.07601165771484,
+            "_id": {
+              "$oid": "66160256adc690afb3b9f32a"
+            }
+          },
+          "ZIP_CODE": {
+            "text": "M5J 0A8,",
+            "confidence": 84.9087905883789,
+            "_id": {
+              "$oid": "66160256adc690afb3b9f32b"
+            }
+          },
+          "CATEGORY": {
+            "text": "computer-related expenses",
+            "confidence": 100,
+            "_id": {
+              "$oid": "66160256adc690afb3b9f32c"
+            }
+          },
+          "_id": {
+            "$oid": "66160256adc690afb3b9f31d"
+          }
+        },
+        {
+          "FILE_PAGE": {
+            "text": "1",
+            "confidence": 100,
+            "_id": {
+              "$oid": "661602a1adc690afb3b9f377"
+            }
+          },
+          "FILE_NAME": {
+            "text": "CAIN24-854879.pdf",
+            "confidence": 100,
+            "_id": {
+              "$oid": "661602a1adc690afb3b9f378"
+            }
+          },
+          "INVOICE_RECEIPT_DATE": {
+            "text": "2024-04-03",
+            "confidence": 100,
+            "_id": {
+              "$oid": "661602a1adc690afb3b9f379"
+            }
+          },
+          "VENDOR_NAME": {
+            "text": "aws",
+            "confidence": 97.96258544921875,
+            "_id": {
+              "$oid": "661602a1adc690afb3b9f37a"
+            }
+          },
+          "VENDOR_ADDRESS": {
+            "text": "Amazon Web Services Canada, Inc.\n120 Bremner Blvd. 26th Floor, Toronto, ON, M5J 0A8, Canada",
+            "confidence": 88.15337371826172,
+            "_id": {
+              "$oid": "661602a1adc690afb3b9f37b"
+            }
+          },
+          "TOTAL": {
+            "text": "CAD 9.19",
+            "confidence": 97.26666259765625,
+            "_id": {
+              "$oid": "661602a1adc690afb3b9f37c"
+            }
+          },
+          "SUBTOTAL": {
+            "text": "CAD 8.13",
+            "confidence": 83.8382568359375,
+            "_id": {
+              "$oid": "661602a1adc690afb3b9f37d"
+            }
+          },
+          "TAX": {
+            "text": "CAD 1.05",
+            "confidence": 96.07051849365234,
+            "_id": {
+              "$oid": "661602a1adc690afb3b9f37e"
+            }
+          },
+          "VENDOR_PHONE": {
+            "text": "",
+            "confidence": 0,
+            "_id": {
+              "$oid": "661602a1adc690afb3b9f385"
+            }
+          },
+          "STREET": {
+            "text": "120 Bremner Blvd. 26th Floor,",
+            "confidence": 99.71393585205078,
+            "_id": {
+              "$oid": "661602a1adc690afb3b9f37f"
+            }
+          },
+          "CITY": {
+            "text": "Toronto,",
+            "confidence": 99.86750030517578,
+            "_id": {
+              "$oid": "661602a1adc690afb3b9f380"
+            }
+          },
+          "STATE": {
+            "text": "ON,",
+            "confidence": 99.24950408935547,
+            "_id": {
+              "$oid": "661602a1adc690afb3b9f381"
+            }
+          },
+          "COUNTRY": {
+            "text": "Canada",
+            "confidence": 99.07601165771484,
+            "_id": {
+              "$oid": "661602a1adc690afb3b9f382"
+            }
+          },
+          "ZIP_CODE": {
+            "text": "M5J 0A8,",
+            "confidence": 84.9087905883789,
+            "_id": {
+              "$oid": "661602a1adc690afb3b9f383"
+            }
+          },
+          "CATEGORY": {
+            "text": "computer-related expenses",
+            "confidence": 100,
+            "_id": {
+              "$oid": "661602a1adc690afb3b9f384"
+            }
+          },
+          "_id": {
+            "$oid": "661602a1adc690afb3b9f375"
+          }
+        },
+        {
+          "FILE_PAGE": {
+            "text": "1",
+            "confidence": 100,
+            "_id": {
+              "$oid": "66189c8ee05b10fe6c3b67b3"
+            }
+          },
+          "FILE_NAME": {
+            "text": "e66c838e-34b9-4393-8f4a-9be038e457e8",
+            "confidence": 100,
+            "_id": {
+              "$oid": "66189c8ee05b10fe6c3b67b4"
+            }
+          },
+          "INVOICE_RECEIPT_DATE": {
+            "text": "2024-04-09",
+            "confidence": 100,
+            "_id": {
+              "$oid": "66189c8ee05b10fe6c3b67b5"
+            }
+          },
+          "VENDOR_NAME": {
+            "text": "Apple Canada, Inc.",
+            "confidence": 99.30461883544922,
+            "_id": {
+              "$oid": "66189c8ee05b10fe6c3b67b6"
+            }
+          },
+          "VENDOR_ADDRESS": {
+            "text": "F/G Distribution Center\nElk Grove, Ca 95758",
+            "confidence": 99.04715728759766,
+            "_id": {
+              "$oid": "66189c8ee05b10fe6c3b67b7"
+            }
+          },
+          "TOTAL": {
+            "text": "1,558.27",
+            "confidence": 98.77272033691406,
+            "_id": {
+              "$oid": "66189c8ee05b10fe6c3b67b8"
+            }
+          },
+          "SUBTOTAL": {
+            "text": "1,379.00",
+            "confidence": 95.82101440429688,
+            "_id": {
+              "$oid": "66189c8ee05b10fe6c3b67b9"
+            }
+          },
+          "TAX": {
+            "text": "",
+            "confidence": 77.41102600097656,
+            "_id": {
+              "$oid": "66189c8ee05b10fe6c3b67ba"
+            }
+          },
+          "CITY": {
+            "text": "Elk Grove,",
+            "confidence": 99.8032455444336,
+            "_id": {
+              "$oid": "66189c8ee05b10fe6c3b67bb"
+            }
+          },
+          "STATE": {
+            "text": "Ca",
+            "confidence": 99.79998779296875,
+            "_id": {
+              "$oid": "66189c8ee05b10fe6c3b67bc"
+            }
+          },
+          "ZIP_CODE": {
+            "text": "95758",
+            "confidence": 99.935791015625,
+            "_id": {
+              "$oid": "66189c8ee05b10fe6c3b67bd"
+            }
+          },
+          "CATEGORY": {
+            "text": "computer-related expenses",
+            "confidence": 100,
+            "_id": {
+              "$oid": "66189c8ee05b10fe6c3b67be"
+            }
+          },
+          "_id": {
+            "$oid": "66189c8ee05b10fe6c3b67b1"
+          },
+          "VENDOR_PHONE": {
+            "text": "",
+            "confidence": 0,
+            "_id": {
+              "$oid": "66189c8ee05b10fe6c3b67bf"
+            }
+          },
+          "STREET": {
+            "text": "",
+            "confidence": 0,
+            "_id": {
+              "$oid": "66189c8ee05b10fe6c3b67c0"
+            }
+          },
+          "COUNTRY": {
+            "text": "",
+            "confidence": 0,
+            "_id": {
+              "$oid": "66189c8ee05b10fe6c3b67c1"
+            }
+          }
+        },
+        {
+          "FILE_PAGE": {
+            "text": "1",
+            "confidence": 100,
+            "_id": {
+              "$oid": "66199d43d4ff37c2a44187ac"
+            }
+          },
+          "FILE_NAME": {
+            "text": "9ce09aa1-698f-4740-9dbe-3a43eb62e667",
+            "confidence": 100,
+            "_id": {
+              "$oid": "66199d43d4ff37c2a44187ad"
+            }
+          },
+          "INVOICE_RECEIPT_DATE": {
+            "text": "2024-04-09",
+            "confidence": 100,
+            "_id": {
+              "$oid": "66199d43d4ff37c2a44187ae"
+            }
+          },
+          "VENDOR_NAME": {
+            "text": "Apple Canada, Inc.",
+            "confidence": 99.30461883544922,
+            "_id": {
+              "$oid": "66199d43d4ff37c2a44187af"
+            }
+          },
+          "VENDOR_ADDRESS": {
+            "text": "F/G Distribution Center\nElk Grove, Ca 95758",
+            "confidence": 99.04715728759766,
+            "_id": {
+              "$oid": "66199d43d4ff37c2a44187b0"
+            }
+          },
+          "TOTAL": {
+            "text": "1,558.27",
+            "confidence": 98.77272033691406,
+            "_id": {
+              "$oid": "66199d43d4ff37c2a44187b1"
+            }
+          },
+          "SUBTOTAL": {
+            "text": "1,379.00",
+            "confidence": 95.82101440429688,
+            "_id": {
+              "$oid": "66199d43d4ff37c2a44187b2"
+            }
+          },
+          "TAX": {
+            "text": "",
+            "confidence": 77.41102600097656,
+            "_id": {
+              "$oid": "66199d43d4ff37c2a44187b3"
+            }
+          },
+          "CITY": {
+            "text": "Elk Grove,",
+            "confidence": 99.8032455444336,
+            "_id": {
+              "$oid": "66199d43d4ff37c2a44187b4"
+            }
+          },
+          "STATE": {
+            "text": "Ca",
+            "confidence": 99.79998779296875,
+            "_id": {
+              "$oid": "66199d43d4ff37c2a44187b5"
+            }
+          },
+          "ZIP_CODE": {
+            "text": "95758",
+            "confidence": 99.935791015625,
+            "_id": {
+              "$oid": "66199d43d4ff37c2a44187b6"
+            }
+          },
+          "CATEGORY": {
+            "text": "computer-related expenses",
+            "confidence": 100,
+            "_id": {
+              "$oid": "66199d43d4ff37c2a44187b7"
+            }
+          },
+          "_id": {
+            "$oid": "66199d43d4ff37c2a44187aa"
+          },
+          "VENDOR_PHONE": {
+            "text": "",
+            "confidence": 0,
+            "_id": {
+              "$oid": "66199d43d4ff37c2a44187b8"
+            }
+          },
+          "STREET": {
+            "text": "",
+            "confidence": 0,
+            "_id": {
+              "$oid": "66199d43d4ff37c2a44187b9"
+            }
+          },
+          "COUNTRY": {
+            "text": "",
+            "confidence": 0,
+            "_id": {
+              "$oid": "66199d43d4ff37c2a44187ba"
+            }
+          }
+        },
+        {
+          "FILE_PAGE": {
+            "text": "1",
+            "confidence": 100,
+            "_id": {
+              "$oid": "66199d59d4ff37c2a44187e6"
+            }
+          },
+          "FILE_NAME": {
+            "text": "2fcf9802-2cf6-4f1e-a057-6932bb311174",
+            "confidence": 100,
+            "_id": {
+              "$oid": "66199d59d4ff37c2a44187e7"
+            }
+          },
+          "INVOICE_RECEIPT_DATE": {
+            "text": "2024-04-09",
+            "confidence": 100,
+            "_id": {
+              "$oid": "66199d59d4ff37c2a44187e8"
+            }
+          },
+          "VENDOR_NAME": {
+            "text": "Apple Canada, Inc.",
+            "confidence": 98.79086303710938,
+            "_id": {
+              "$oid": "66199d59d4ff37c2a44187e9"
+            }
+          },
+          "VENDOR_ADDRESS": {
+            "text": "F/G Distribution Center\nElk Grove, Ca 95758",
+            "confidence": 98.83837127685547,
+            "_id": {
+              "$oid": "66199d59d4ff37c2a44187ea"
+            }
+          },
+          "TOTAL": {
+            "text": "1,558.27",
+            "confidence": 59.926570892333984,
+            "_id": {
+              "$oid": "66199d59d4ff37c2a44187eb"
+            }
+          },
+          "SUBTOTAL": {
+            "text": "1,379.00",
+            "confidence": 94.62877655029297,
+            "_id": {
+              "$oid": "66199d59d4ff37c2a44187ec"
+            }
+          },
+          "TAX": {
+            "text": "",
+            "confidence": 88.40058135986328,
+            "_id": {
+              "$oid": "66199d59d4ff37c2a44187ed"
+            }
+          },
+          "CITY": {
+            "text": "Elk Grove,",
+            "confidence": 99.66096496582031,
+            "_id": {
+              "$oid": "66199d59d4ff37c2a44187ee"
+            }
+          },
+          "STATE": {
+            "text": "Ca",
+            "confidence": 99.50785827636719,
+            "_id": {
+              "$oid": "66199d59d4ff37c2a44187ef"
+            }
+          },
+          "ZIP_CODE": {
+            "text": "95758",
+            "confidence": 99.83538055419922,
+            "_id": {
+              "$oid": "66199d59d4ff37c2a44187f0"
+            }
+          },
+          "CATEGORY": {
+            "text": "computer-related expenses",
+            "confidence": 100,
+            "_id": {
+              "$oid": "66199d59d4ff37c2a44187f1"
+            }
+          },
+          "_id": {
+            "$oid": "66199d59d4ff37c2a44187e4"
+          },
+          "VENDOR_PHONE": {
+            "text": "",
+            "confidence": 0,
+            "_id": {
+              "$oid": "66199d59d4ff37c2a44187f2"
+            }
+          },
+          "STREET": {
+            "text": "",
+            "confidence": 0,
+            "_id": {
+              "$oid": "66199d59d4ff37c2a44187f3"
+            }
+          },
+          "COUNTRY": {
+            "text": "",
+            "confidence": 0,
+            "_id": {
+              "$oid": "66199d59d4ff37c2a44187f4"
+            }
+          }
+        },
+        {
+          "FILE_PAGE": {
+            "text": "1",
+            "confidence": 100,
+            "_id": {
+              "$oid": "66199d59d4ff37c2a441880c"
+            }
+          },
+          "FILE_NAME": {
+            "text": "6b526713-9add-496f-b90c-9085bb084269",
+            "confidence": 100,
+            "_id": {
+              "$oid": "66199d59d4ff37c2a441880d"
+            }
+          },
+          "INVOICE_RECEIPT_DATE": {
+            "text": "2024-04-03",
+            "confidence": 100,
+            "_id": {
+              "$oid": "66199d59d4ff37c2a441880e"
+            }
+          },
+          "VENDOR_NAME": {
+            "text": "aws",
+            "confidence": 97.96258544921875,
+            "_id": {
+              "$oid": "66199d59d4ff37c2a441880f"
+            }
+          },
+          "VENDOR_ADDRESS": {
+            "text": "Amazon Web Services Canada, Inc.\n120 Bremner Blvd. 26th Floor, Toronto, ON, M5J 0A8, Canada",
+            "confidence": 88.15337371826172,
+            "_id": {
+              "$oid": "66199d59d4ff37c2a4418810"
+            }
+          },
+          "TOTAL": {
+            "text": "CAD 9.19",
+            "confidence": 97.26666259765625,
+            "_id": {
+              "$oid": "66199d59d4ff37c2a4418811"
+            }
+          },
+          "SUBTOTAL": {
+            "text": "CAD 8.13",
+            "confidence": 83.8382568359375,
+            "_id": {
+              "$oid": "66199d59d4ff37c2a4418812"
+            }
+          },
+          "TAX": {
+            "text": "CAD 1.05",
+            "confidence": 96.07051849365234,
+            "_id": {
+              "$oid": "66199d59d4ff37c2a4418813"
+            }
+          },
+          "STREET": {
+            "text": "120 Bremner Blvd. 26th Floor,",
+            "confidence": 99.71393585205078,
+            "_id": {
+              "$oid": "66199d59d4ff37c2a4418814"
+            }
+          },
+          "CITY": {
+            "text": "Toronto,",
+            "confidence": 99.86750030517578,
+            "_id": {
+              "$oid": "66199d59d4ff37c2a4418815"
+            }
+          },
+          "STATE": {
+            "text": "ON,",
+            "confidence": 99.24950408935547,
+            "_id": {
+              "$oid": "66199d59d4ff37c2a4418816"
+            }
+          },
+          "COUNTRY": {
+            "text": "Canada",
+            "confidence": 99.07601165771484,
+            "_id": {
+              "$oid": "66199d59d4ff37c2a4418817"
+            }
+          },
+          "ZIP_CODE": {
+            "text": "M5J 0A8,",
+            "confidence": 84.9087905883789,
+            "_id": {
+              "$oid": "66199d59d4ff37c2a4418818"
+            }
+          },
+          "CATEGORY": {
+            "text": "computer-related expenses",
+            "confidence": 100,
+            "_id": {
+              "$oid": "66199d59d4ff37c2a4418819"
+            }
+          },
+          "_id": {
+            "$oid": "66199d59d4ff37c2a441880a"
+          },
+          "VENDOR_PHONE": {
+            "text": "",
+            "confidence": 0,
+            "_id": {
+              "$oid": "66199d59d4ff37c2a441881a"
+            }
+          }
+        },
+        {
+          "FILE_PAGE": {
+            "text": "1",
+            "confidence": 100,
+            "_id": {
+              "$oid": "66199fb34c38b58a317d2f28"
+            }
+          },
+          "FILE_NAME": {
+            "text": "CAIN24-854879.pdf",
+            "confidence": 100,
+            "_id": {
+              "$oid": "66199fb34c38b58a317d2f29"
+            }
+          },
+          "INVOICE_RECEIPT_DATE": {
+            "text": "2024-04-03",
+            "confidence": 100,
+            "_id": {
+              "$oid": "66199fb34c38b58a317d2f2a"
+            }
+          },
+          "VENDOR_NAME": {
+            "text": "aws",
+            "confidence": 98.21190643310547,
+            "_id": {
+              "$oid": "66199fb34c38b58a317d2f2b"
+            }
+          },
+          "VENDOR_ADDRESS": {
+            "text": "Amazon Web Services Canada, Inc.\n120 Bremner Blvd. 26th Floor, Toronto, ON, M5J 0A8, Canada",
+            "confidence": 88.68940734863281,
+            "_id": {
+              "$oid": "66199fb34c38b58a317d2f2c"
+            }
+          },
+          "TOTAL": {
+            "text": "CAD 9.19",
+            "confidence": 97.30374145507812,
+            "_id": {
+              "$oid": "66199fb34c38b58a317d2f2d"
+            }
+          },
+          "SUBTOTAL": {
+            "text": "CAD 8.13",
+            "confidence": 82.3470458984375,
+            "_id": {
+              "$oid": "66199fb34c38b58a317d2f2e"
+            }
+          },
+          "TAX": {
+            "text": "CAD 1.05",
+            "confidence": 96.18838500976562,
+            "_id": {
+              "$oid": "66199fb34c38b58a317d2f2f"
+            }
+          },
+          "STREET": {
+            "text": "120 Bremner Blvd. 26th Floor,",
+            "confidence": 99.72467803955078,
+            "_id": {
+              "$oid": "66199fb34c38b58a317d2f30"
+            }
+          },
+          "CITY": {
+            "text": "Toronto,",
+            "confidence": 99.85081481933594,
+            "_id": {
+              "$oid": "66199fb34c38b58a317d2f31"
+            }
+          },
+          "STATE": {
+            "text": "ON,",
+            "confidence": 99.24139404296875,
+            "_id": {
+              "$oid": "66199fb34c38b58a317d2f32"
+            }
+          },
+          "COUNTRY": {
+            "text": "Canada",
+            "confidence": 99.04238891601562,
+            "_id": {
+              "$oid": "66199fb34c38b58a317d2f33"
+            }
+          },
+          "ZIP_CODE": {
+            "text": "M5J 0A8,",
+            "confidence": 84.75476837158203,
+            "_id": {
+              "$oid": "66199fb34c38b58a317d2f34"
+            }
+          },
+          "CATEGORY": {
+            "text": "computer-related expenses",
+            "confidence": 100,
+            "_id": {
+              "$oid": "66199fb34c38b58a317d2f35"
+            }
+          },
+          "_id": {
+            "$oid": "66199fb34c38b58a317d2f26"
+          },
+          "VENDOR_PHONE": {
+            "text": "",
+            "confidence": 0,
+            "_id": {
+              "$oid": "66199fb34c38b58a317d2f36"
+            }
+          }
+        },
+        {
+          "FILE_PAGE": {
+            "text": "1",
+            "confidence": 100,
+            "_id": {
+              "$oid": "66199fe94c38b58a317d2f68"
+            }
+          },
+          "FILE_NAME": {
+            "text": "0fd9a838-4b34-4e82-b8de-b263bc1f61b8",
+            "confidence": 100,
+            "_id": {
+              "$oid": "66199fe94c38b58a317d2f69"
+            }
+          },
+          "INVOICE_RECEIPT_DATE": {
+            "text": "2023-07-28",
+            "confidence": 100,
+            "_id": {
+              "$oid": "66199fe94c38b58a317d2f6a"
+            }
+          },
+          "VENDOR_NAME": {
+            "text": "Railway",
+            "confidence": 99.42776489257812,
+            "_id": {
+              "$oid": "66199fe94c38b58a317d2f6b"
+            }
+          },
+          "VENDOR_ADDRESS": {
+            "text": "Railway\n2135 California Street\nApt A\nSan Francisco, California 94115\nUnited States",
+            "confidence": 99.92352294921875,
+            "_id": {
+              "$oid": "66199fe94c38b58a317d2f6c"
+            }
+          },
+          "TOTAL": {
+            "text": "$5.00 USD",
+            "confidence": 99.13706970214844,
+            "_id": {
+              "$oid": "66199fe94c38b58a317d2f6d"
+            }
+          },
+          "SUBTOTAL": {
+            "text": "$7.57",
+            "confidence": 99.9962158203125,
+            "_id": {
+              "$oid": "66199fe94c38b58a317d2f6e"
+            }
+          },
+          "STREET": {
+            "text": "2135 California Street\nApt A",
+            "confidence": 98.23939514160156,
+            "_id": {
+              "$oid": "66199fe94c38b58a317d2f6f"
+            }
+          },
+          "CITY": {
+            "text": "San Francisco,",
+            "confidence": 99.99353790283203,
+            "_id": {
+              "$oid": "66199fe94c38b58a317d2f70"
+            }
+          },
+          "STATE": {
+            "text": "California",
+            "confidence": 99.99713897705078,
+            "_id": {
+              "$oid": "66199fe94c38b58a317d2f71"
+            }
+          },
+          "COUNTRY": {
+            "text": "United States",
+            "confidence": 99.99858856201172,
+            "_id": {
+              "$oid": "66199fe94c38b58a317d2f72"
+            }
+          },
+          "ZIP_CODE": {
+            "text": "94115",
+            "confidence": 99.98635864257812,
+            "_id": {
+              "$oid": "66199fe94c38b58a317d2f73"
+            }
+          },
+          "CATEGORY": {
+            "text": "utilities",
+            "confidence": 100,
+            "_id": {
+              "$oid": "66199fe94c38b58a317d2f74"
+            }
+          },
+          "_id": {
+            "$oid": "66199fe94c38b58a317d2f66"
+          },
+          "TAX": {
+            "text": "",
+            "confidence": 0,
+            "_id": {
+              "$oid": "66199fe94c38b58a317d2f75"
+            }
+          },
+          "VENDOR_PHONE": {
+            "text": "",
+            "confidence": 0,
+            "_id": {
+              "$oid": "66199fe94c38b58a317d2f76"
+            }
+          }
+        },
+        {
+          "FILE_PAGE": {
+            "text": "1",
+            "confidence": 100,
+            "_id": {
+              "$oid": "6619a0943833d8573d606556"
+            }
+          },
+          "FILE_NAME": {
+            "text": "Invoice-4DB6F003-0007.pdf",
+            "confidence": 100,
+            "_id": {
+              "$oid": "6619a0943833d8573d606557"
+            }
+          },
+          "INVOICE_RECEIPT_DATE": {
+            "text": "2023-07-28",
+            "confidence": 100,
+            "_id": {
+              "$oid": "6619a0943833d8573d606558"
+            }
+          },
+          "VENDOR_NAME": {
+            "text": "Railway",
+            "confidence": 99.42776489257812,
+            "_id": {
+              "$oid": "6619a0943833d8573d606559"
+            }
+          },
+          "VENDOR_ADDRESS": {
+            "text": "Railway\n2135 California Street\nApt A\nSan Francisco, California 94115\nUnited States",
+            "confidence": 99.92352294921875,
+            "_id": {
+              "$oid": "6619a0943833d8573d60655a"
+            }
+          },
+          "TOTAL": {
+            "text": "$5.00 USD",
+            "confidence": 99.13706970214844,
+            "_id": {
+              "$oid": "6619a0943833d8573d60655b"
+            }
+          },
+          "SUBTOTAL": {
+            "text": "$7.57",
+            "confidence": 99.9962158203125,
+            "_id": {
+              "$oid": "6619a0943833d8573d60655c"
+            }
+          },
+          "STREET": {
+            "text": "2135 California Street\nApt A",
+            "confidence": 98.23939514160156,
+            "_id": {
+              "$oid": "6619a0943833d8573d60655d"
+            }
+          },
+          "CITY": {
+            "text": "San Francisco,",
+            "confidence": 99.99353790283203,
+            "_id": {
+              "$oid": "6619a0943833d8573d60655e"
+            }
+          },
+          "STATE": {
+            "text": "California",
+            "confidence": 99.99713897705078,
+            "_id": {
+              "$oid": "6619a0943833d8573d60655f"
+            }
+          },
+          "COUNTRY": {
+            "text": "United States",
+            "confidence": 99.99858856201172,
+            "_id": {
+              "$oid": "6619a0943833d8573d606560"
+            }
+          },
+          "ZIP_CODE": {
+            "text": "94115",
+            "confidence": 99.98635864257812,
+            "_id": {
+              "$oid": "6619a0943833d8573d606561"
+            }
+          },
+          "CATEGORY": {
+            "text": "utilities",
+            "confidence": 100,
+            "_id": {
+              "$oid": "6619a0943833d8573d606562"
+            }
+          },
+          "_id": {
+            "$oid": "6619a0943833d8573d606554"
+          },
+          "TAX": {
+            "text": "",
+            "confidence": 0,
+            "_id": {
+              "$oid": "6619a0943833d8573d606563"
+            }
+          },
+          "VENDOR_PHONE": {
+            "text": "",
+            "confidence": 0,
+            "_id": {
+              "$oid": "6619a0943833d8573d606564"
+            }
+          }
+        },
+        {
+          "FILE_PAGE": {
+            "text": "1",
+            "confidence": 100,
+            "_id": {
+              "$oid": "6619a0b03833d8573d60659a"
+            }
+          },
+          "FILE_NAME": {
+            "text": "Gmail - Your Invoice # MA71983493.pdf",
+            "confidence": 100,
+            "_id": {
+              "$oid": "6619a0b03833d8573d60659b"
+            }
+          },
+          "INVOICE_RECEIPT_DATE": {
+            "text": "2024-04-09",
+            "confidence": 100,
+            "_id": {
+              "$oid": "6619a0b03833d8573d60659c"
+            }
+          },
+          "VENDOR_NAME": {
+            "text": "Apple Canada, Inc.",
+            "confidence": 99.30461883544922,
+            "_id": {
+              "$oid": "6619a0b03833d8573d60659d"
+            }
+          },
+          "VENDOR_ADDRESS": {
+            "text": "F/G Distribution Center\nElk Grove, Ca 95758",
+            "confidence": 99.04715728759766,
+            "_id": {
+              "$oid": "6619a0b03833d8573d60659e"
+            }
+          },
+          "TOTAL": {
+            "text": "1,558.27",
+            "confidence": 98.77272033691406,
+            "_id": {
+              "$oid": "6619a0b03833d8573d60659f"
+            }
+          },
+          "SUBTOTAL": {
+            "text": "1,379.00",
+            "confidence": 95.82101440429688,
+            "_id": {
+              "$oid": "6619a0b03833d8573d6065a0"
+            }
+          },
+          "TAX": {
+            "text": "",
+            "confidence": 77.41102600097656,
+            "_id": {
+              "$oid": "6619a0b03833d8573d6065a1"
+            }
+          },
+          "CITY": {
+            "text": "Elk Grove,",
+            "confidence": 99.8032455444336,
+            "_id": {
+              "$oid": "6619a0b03833d8573d6065a2"
+            }
+          },
+          "STATE": {
+            "text": "Ca",
+            "confidence": 99.79998779296875,
+            "_id": {
+              "$oid": "6619a0b03833d8573d6065a3"
+            }
+          },
+          "ZIP_CODE": {
+            "text": "95758",
+            "confidence": 99.935791015625,
+            "_id": {
+              "$oid": "6619a0b03833d8573d6065a4"
+            }
+          },
+          "CATEGORY": {
+            "text": "computer-related expenses",
+            "confidence": 100,
+            "_id": {
+              "$oid": "6619a0b03833d8573d6065a5"
+            }
+          },
+          "_id": {
+            "$oid": "6619a0b03833d8573d606598"
+          },
+          "VENDOR_PHONE": {
+            "text": "",
+            "confidence": 0,
+            "_id": {
+              "$oid": "6619a0b03833d8573d6065a6"
+            }
+          },
+          "STREET": {
+            "text": "",
+            "confidence": 0,
+            "_id": {
+              "$oid": "6619a0b03833d8573d6065a7"
+            }
+          },
+          "COUNTRY": {
+            "text": "",
+            "confidence": 0,
+            "_id": {
+              "$oid": "6619a0b03833d8573d6065a8"
+            }
+          }
+        },
+        {
+          "FILE_PAGE": {
+            "text": "1",
+            "confidence": 100,
+            "_id": {
+              "$oid": "6619a0b13833d8573d6065c5"
+            }
+          },
+          "FILE_NAME": {
+            "text": "CAIN24-854879.pdf",
+            "confidence": 100,
+            "_id": {
+              "$oid": "6619a0b13833d8573d6065c6"
+            }
+          },
+          "INVOICE_RECEIPT_DATE": {
+            "text": "2024-04-03",
+            "confidence": 100,
+            "_id": {
+              "$oid": "6619a0b13833d8573d6065c7"
+            }
+          },
+          "VENDOR_NAME": {
+            "text": "aws",
+            "confidence": 97.96258544921875,
+            "_id": {
+              "$oid": "6619a0b13833d8573d6065c8"
+            }
+          },
+          "VENDOR_ADDRESS": {
+            "text": "Amazon Web Services Canada, Inc.\n120 Bremner Blvd. 26th Floor, Toronto, ON, M5J 0A8, Canada",
+            "confidence": 88.15337371826172,
+            "_id": {
+              "$oid": "6619a0b13833d8573d6065c9"
+            }
+          },
+          "TOTAL": {
+            "text": "CAD 9.19",
+            "confidence": 97.26666259765625,
+            "_id": {
+              "$oid": "6619a0b13833d8573d6065ca"
+            }
+          },
+          "SUBTOTAL": {
+            "text": "CAD 8.13",
+            "confidence": 83.8382568359375,
+            "_id": {
+              "$oid": "6619a0b13833d8573d6065cb"
+            }
+          },
+          "TAX": {
+            "text": "CAD 1.05",
+            "confidence": 96.07051849365234,
+            "_id": {
+              "$oid": "6619a0b13833d8573d6065cc"
+            }
+          },
+          "STREET": {
+            "text": "120 Bremner Blvd. 26th Floor,",
+            "confidence": 99.71393585205078,
+            "_id": {
+              "$oid": "6619a0b13833d8573d6065cd"
+            }
+          },
+          "CITY": {
+            "text": "Toronto,",
+            "confidence": 99.86750030517578,
+            "_id": {
+              "$oid": "6619a0b13833d8573d6065ce"
+            }
+          },
+          "STATE": {
+            "text": "ON,",
+            "confidence": 99.24950408935547,
+            "_id": {
+              "$oid": "6619a0b13833d8573d6065cf"
+            }
+          },
+          "COUNTRY": {
+            "text": "Canada",
+            "confidence": 99.07601165771484,
+            "_id": {
+              "$oid": "6619a0b13833d8573d6065d0"
+            }
+          },
+          "ZIP_CODE": {
+            "text": "M5J 0A8,",
+            "confidence": 84.9087905883789,
+            "_id": {
+              "$oid": "6619a0b13833d8573d6065d1"
+            }
+          },
+          "CATEGORY": {
+            "text": "computer-related expenses",
+            "confidence": 100,
+            "_id": {
+              "$oid": "6619a0b13833d8573d6065d2"
+            }
+          },
+          "_id": {
+            "$oid": "6619a0b13833d8573d6065c3"
+          },
+          "VENDOR_PHONE": {
+            "text": "",
+            "confidence": 0,
+            "_id": {
+              "$oid": "6619a0b13833d8573d6065d3"
+            }
+          }
+        },
+        {
+          "FILE_PAGE": {
+            "text": "1",
+            "confidence": 100,
+            "_id": {
+              "$oid": "6619a0da3833d8573d60660d"
+            }
+          },
+          "FILE_NAME": {
+            "text": "CAIN24-854879.pdf",
+            "confidence": 100,
+            "_id": {
+              "$oid": "6619a0da3833d8573d60660e"
+            }
+          },
+          "INVOICE_RECEIPT_DATE": {
+            "text": "2024-04-03",
+            "confidence": 100,
+            "_id": {
+              "$oid": "6619a0da3833d8573d60660f"
+            }
+          },
+          "VENDOR_NAME": {
+            "text": "aws",
+            "confidence": 97.96258544921875,
+            "_id": {
+              "$oid": "6619a0da3833d8573d606610"
+            }
+          },
+          "VENDOR_ADDRESS": {
+            "text": "Amazon Web Services Canada, Inc.\n120 Bremner Blvd. 26th Floor, Toronto, ON, M5J 0A8, Canada",
+            "confidence": 88.15337371826172,
+            "_id": {
+              "$oid": "6619a0da3833d8573d606611"
+            }
+          },
+          "TOTAL": {
+            "text": "CAD 9.19",
+            "confidence": 97.26666259765625,
+            "_id": {
+              "$oid": "6619a0da3833d8573d606612"
+            }
+          },
+          "SUBTOTAL": {
+            "text": "CAD 8.13",
+            "confidence": 83.8382568359375,
+            "_id": {
+              "$oid": "6619a0da3833d8573d606613"
+            }
+          },
+          "TAX": {
+            "text": "CAD 1.05",
+            "confidence": 96.07051849365234,
+            "_id": {
+              "$oid": "6619a0da3833d8573d606614"
+            }
+          },
+          "STREET": {
+            "text": "120 Bremner Blvd. 26th Floor,",
+            "confidence": 99.71393585205078,
+            "_id": {
+              "$oid": "6619a0da3833d8573d606615"
+            }
+          },
+          "CITY": {
+            "text": "Toronto,",
+            "confidence": 99.86750030517578,
+            "_id": {
+              "$oid": "6619a0da3833d8573d606616"
+            }
+          },
+          "STATE": {
+            "text": "ON,",
+            "confidence": 99.24950408935547,
+            "_id": {
+              "$oid": "6619a0da3833d8573d606617"
+            }
+          },
+          "COUNTRY": {
+            "text": "Canada",
+            "confidence": 99.07601165771484,
+            "_id": {
+              "$oid": "6619a0da3833d8573d606618"
+            }
+          },
+          "ZIP_CODE": {
+            "text": "M5J 0A8,",
+            "confidence": 84.9087905883789,
+            "_id": {
+              "$oid": "6619a0da3833d8573d606619"
+            }
+          },
+          "CATEGORY": {
+            "text": "computer-related expenses",
+            "confidence": 100,
+            "_id": {
+              "$oid": "6619a0da3833d8573d60661a"
+            }
+          },
+          "_id": {
+            "$oid": "6619a0da3833d8573d60660b"
+          },
+          "VENDOR_PHONE": {
+            "text": "",
+            "confidence": 0,
+            "_id": {
+              "$oid": "6619a0da3833d8573d60661b"
+            }
+          }
+        },
+        {
+          "FILE_PAGE": {
+            "text": "1",
+            "confidence": 100,
+            "_id": {
+              "$oid": "6619a0dc3833d8573d60663a"
+            }
+          },
+          "FILE_NAME": {
+            "text": "Gmail - Your Invoice # MA71983493.pdf",
+            "confidence": 100,
+            "_id": {
+              "$oid": "6619a0dc3833d8573d60663b"
+            }
+          },
+          "INVOICE_RECEIPT_DATE": {
+            "text": "2024-04-09",
+            "confidence": 100,
+            "_id": {
+              "$oid": "6619a0dc3833d8573d60663c"
+            }
+          },
+          "VENDOR_NAME": {
+            "text": "Apple Canada, Inc.",
+            "confidence": 99.30461883544922,
+            "_id": {
+              "$oid": "6619a0dc3833d8573d60663d"
+            }
+          },
+          "VENDOR_ADDRESS": {
+            "text": "F/G Distribution Center\nElk Grove, Ca 95758",
+            "confidence": 99.04715728759766,
+            "_id": {
+              "$oid": "6619a0dc3833d8573d60663e"
+            }
+          },
+          "TOTAL": {
+            "text": "1,558.27",
+            "confidence": 98.77272033691406,
+            "_id": {
+              "$oid": "6619a0dc3833d8573d60663f"
+            }
+          },
+          "SUBTOTAL": {
+            "text": "1,379.00",
+            "confidence": 95.82101440429688,
+            "_id": {
+              "$oid": "6619a0dc3833d8573d606640"
+            }
+          },
+          "TAX": {
+            "text": "",
+            "confidence": 77.41102600097656,
+            "_id": {
+              "$oid": "6619a0dc3833d8573d606641"
+            }
+          },
+          "CITY": {
+            "text": "Elk Grove,",
+            "confidence": 99.8032455444336,
+            "_id": {
+              "$oid": "6619a0dc3833d8573d606642"
+            }
+          },
+          "STATE": {
+            "text": "Ca",
+            "confidence": 99.79998779296875,
+            "_id": {
+              "$oid": "6619a0dc3833d8573d606643"
+            }
+          },
+          "ZIP_CODE": {
+            "text": "95758",
+            "confidence": 99.935791015625,
+            "_id": {
+              "$oid": "6619a0dc3833d8573d606644"
+            }
+          },
+          "CATEGORY": {
+            "text": "computer-related expenses",
+            "confidence": 100,
+            "_id": {
+              "$oid": "6619a0dc3833d8573d606645"
+            }
+          },
+          "_id": {
+            "$oid": "6619a0dc3833d8573d606638"
+          },
+          "VENDOR_PHONE": {
+            "text": "",
+            "confidence": 0,
+            "_id": {
+              "$oid": "6619a0dc3833d8573d606646"
+            }
+          },
+          "STREET": {
+            "text": "",
+            "confidence": 0,
+            "_id": {
+              "$oid": "6619a0dc3833d8573d606647"
+            }
+          },
+          "COUNTRY": {
+            "text": "",
+            "confidence": 0,
+            "_id": {
+              "$oid": "6619a0dc3833d8573d606648"
+            }
+          }
+        }
+      ],
+      "_id": {
+        "$oid": "6614bd52e8f988884035e57c"
+      }
+    }
+  ],
+  "createdAt": {
+    "$date": "2024-04-08T22:56:37.047Z"
+  },
+  "updatedAt": {
+    "$date": "2024-04-12T21:00:12.637Z"
+  },
+  "__v": 19
+}]

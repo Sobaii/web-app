@@ -1,0 +1,46 @@
+{
+    "message": "Files uploaded and data processed successfully",
+    "data": [
+        [
+            {
+                "ADDRESS": "220 \"onge St Unit 2123A\nToror 0, Ortario M5B 2H1"
+            },
+            {
+                "STREET": "220 \"onge St Unit 2123A"
+            },
+            {
+                "ADDRESS_BLOCK": "220 \"onge St Unit 2123A\nToror 0, Ortario M5B 2H1"
+            },
+            {
+                "NAME": "honey"
+            },
+            {
+                "AMOUNT_PAID": "152.5"
+            },
+            {
+                "INVOICE_RECEIPT_DATE": "02/08/24"
+            },
+            {
+                "TAX_PAYER_ID": "163515499FT0001"
+            },
+            {
+                "SUBTOTAL": "135.0"
+            },
+            {
+                "TAX": "17.5"
+            },
+            {
+                "TOTAL": "152.5"
+            },
+            {
+                "VENDOR_ADDRESS": "220 \"onge St Unit 2123A\nToror 0, Ortario M5B 2H1"
+            },
+            {
+                "VENDOR_NAME": "honey"
+            },
+            {
+                "VENDOR_PHONE": "(46) 591-0070"
+            }
+        ]
+    ]
+}
