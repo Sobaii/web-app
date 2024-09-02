@@ -11,8 +11,7 @@ const googleOAuth2Client = new OAuth2Client(
   "http://localhost:3000/auth/google/callback"
 );
 
-const allowedOrigins = ['http://localhost:5173', 'http://localhost:3001'];
-
+const allowedOrigins = ["http://localhost:5173", "http://localhost:3001"];
 
 // Function to initiate Google login
 const handleGoogleLogin = async (req, res) => {
@@ -37,9 +36,8 @@ const handleGoogleLogin = async (req, res) => {
   res.json({ url: authorizeUrl });
 };
 
-
 const getUserGoogleInfo = async (req, res) => {
-  const user = await User.findById(req.session.user.id);
+  const { user } = req;
   const response = await fetch(
     `https://www.googleapis.com/oauth2/v3/userinfo?access_token=${user.accessToken}`
   );

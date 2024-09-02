@@ -2,39 +2,47 @@ import React, { useEffect, useRef, useState } from "react";
 import "./styles/DataTable.css";
 import UpArrow from "../assets/up-arrow.svg";
 import DownArrow from "../assets/down-arrow.svg";
-import PDFRender from "./PDFRender";
+import FileRender from "./FileRender";
 import Button from "./Button";
 import getBackgroundColor from "../util/getBackgroundColor";
-import getAllKeysInNestedObject from "../util/getAllKeysInNestedObject";
+import getAllKeysInObjectArray from "../util/getAllKeysInObjectArray";
+import { downloadExpensesXLSX, getFileUrl } from "../services/expenseServices";
 import {
-  downloadExpensesXLSX,
-  readLocalFilePage,
-} from "../services/expenseServices";
-import { getUserExpenses, updateUserExpenses, updateUserSpreadsheetName } from "../services/userServices";
+  getUserExpenses,
+  updateUserExpenses,
+  updateUserSpreadsheetName,
+} from "../services/userServices";
 import sortNestedExpenseObject from "../util/sortNestedExpenseObject";
 import { toast } from "sonner";
 import MultiSelect from "./MultiSelect";
-import formatSnakeCase from "../util/formatSnakeCase";
+import formatCamelCase from "../util/formatCamelCase";
 import UploadFile from "./UploadFile";
 import Checkbox from "./Checkbox";
 import { useLocation, useNavigate } from "react-router-dom";
 import Loader from "./Loader";
 import Card from "./Card";
 import Input from "./Input";
-import UploadFileIcon from '../assets/upload-file.svg';
-import DownloadFileIcon from '../assets/download-file.svg';
-import SaveFileIcon from '../assets/save-file.svg';
+import UploadFileIcon from "../assets/upload-file.svg";
+import DownloadFileIcon from "../assets/download-file.svg";
+import SaveFileIcon from "../assets/save-file.svg";
 
 function DataTable() {
   const [expenses, setExpenses] = useState([]);
   const [spreadsheetName, setSpreadsheetName] = useState("");
-  const allKeys = getAllKeysInNestedObject(expenses);
-  const [selectedFields, setSelectedFields] = useState([]);
+  const allKeys = getAllKeysInObjectArray(expenses, ["fileKey", "_id"]);
+  const [selectedFields, setSelectedFields] = useState([
+    "category",
+    "company",
+    "subtotal",
+    "totalTax",
+    "total",
+    "transactionDate",
+  ]);
   const [sortConfig, setSortConfig] = useState({
-    key: "INVOICE_RECEIPT_DATE",
+    key: "transactionDate",
     direction: "ascending",
   });
-  const [viewingPDF, setViewingPDF] = useState(null);
+  const [viewingFileUrl, setViewingFileUrl] = useState(null);
   const [activeExpense, setActiveExpense] = useState(null);
   const [showUploadModal, setShowUploadModal] = useState(false);
   const [selectedExpenses, setSelectedExpenses] = useState([]);
@@ -42,21 +50,7 @@ function DataTable() {
 
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
-  const spreadsheetId = searchParams.get('spreadsheet');
-
-  useEffect(() => {
-    setSelectedFields(
-      allKeys.filter(
-        (key) =>
-          key === "INVOICE_RECEIPT_DATE" ||
-          key === "TOTAL" ||
-          key === "SUBTOTAL" ||
-          key === "TAX" ||
-          key === "VENDOR_NAME" ||
-          key === "CATEGORY"
-      )
-    );
-  }, [expenses]);
+  const spreadsheetId = searchParams.get("spreadsheet");
 
   useEffect(() => {
     const fetchExpenses = async () => {
@@ -74,18 +68,21 @@ function DataTable() {
       direction = "descending";
     }
     setSortConfig({ key, direction });
-    const sortedFormExpenses = sortNestedExpenseObject(
-      expenses,
-      key,
-      direction
-    );
-    setExpenses(sortedFormExpenses);
+
+    setExpenses((prevExpenses) => {
+      const sortedExpenses = sortNestedExpenseObject(
+        [...prevExpenses],
+        key,
+        direction
+      );
+      return sortedExpenses;
+    });
   };
 
-  const viewPDF = async (filename, filepage, expense) => {
+  const viewPDF = async (filename, expense) => {
     try {
-      const fileURL = await readLocalFilePage(filename, filepage);
-      setViewingPDF(fileURL);
+      const fileUrl = await getFileUrl(filename);
+      setViewingFileUrl(fileUrl);
       setActiveExpense(expense);
       toast.success("PDF loaded successfully");
     } catch (error) {
@@ -98,7 +95,7 @@ function DataTable() {
     try {
       await Promise.all([
         updateUserExpenses(expenses, spreadsheetId),
-        updateUserSpreadsheetName(spreadsheetName, spreadsheetId)
+        updateUserSpreadsheetName(spreadsheetName, spreadsheetId),
       ]);
       toast.success("Changes saved successfully");
     } catch (error) {
@@ -106,10 +103,9 @@ function DataTable() {
     }
   };
 
-
   const handleClosePDF = () => {
     setActiveExpense(null);
-    setViewingPDF(null);
+    setViewingFileUrl(null);
   };
 
   const handleCheckboxChange = (expenseId) => {
@@ -140,15 +136,16 @@ function DataTable() {
   };
 
   if (loading) {
-    return (
-      <Loader />
-    );
+    return <Loader />;
   }
 
   return (
     <div className="flex flex-col gap-3">
-      <Input value={spreadsheetName} onChange={(e) => setSpreadsheetName(e.target.value)} />
-      <Card className='p-2 sticky flex-row top-2 left-0 z-50 gap-3'>
+      <Input
+        value={spreadsheetName}
+        onChange={(e) => setSpreadsheetName(e.target.value)}
+      />
+      <Card className="p-2 sticky flex-row top-2 left-0 z-50 gap-3">
         {expenses.length > 0 && (
           <MultiSelect
             selected={selectedFields}
@@ -157,19 +154,24 @@ function DataTable() {
             placeholder="Select Categories"
           />
         )}
-        <Button text="Upload File" onClick={(e) => setShowUploadModal(true)} imageSrc={UploadFileIcon} />
+        <Button
+          text="Upload File"
+          onClick={(e) => setShowUploadModal(true)}
+          imageSrc={UploadFileIcon}
+        />
         {expenses.length > 0 && (
           <>
-            <Button text="Save" handleClick={handleSave} imageSrc={SaveFileIcon} />
+            <Button
+              text="Save"
+              handleClick={handleSave}
+              imageSrc={SaveFileIcon}
+            />
             <Button
               imageSrc={DownloadFileIcon}
               text="Generate CSV File"
               handleClick={async () => {
                 try {
-                  await downloadExpensesXLSX(
-                    spreadsheetId,
-                    selectedFields
-                  );
+                  await downloadExpensesXLSX(spreadsheetId, selectedFields);
                   toast.success("CSV file generated successfully");
                 } catch (error) {
                   toast.error("Failed to generate CSV file");
@@ -178,8 +180,8 @@ function DataTable() {
             />
           </>
         )}
-        {viewingPDF && (
-          <PDFRender viewingPDF={viewingPDF} handleClose={handleClosePDF} />
+        {viewingFileUrl && (
+          <FileRender fileUrl={viewingFileUrl} handleClose={handleClosePDF} />
         )}
         <UploadFile
           showUploadModal={showUploadModal}
@@ -191,8 +193,9 @@ function DataTable() {
           <Button
             onClick={removeSelectedExpenses}
             variant="destructive"
-            text={`Delete ${selectedExpenses.length} item${selectedExpenses.length > 1 ? "s" : ""
-              }`}
+            text={`Delete ${selectedExpenses.length} item${
+              selectedExpenses.length > 1 ? "s" : ""
+            }`}
           />
         )}
       </Card>
@@ -220,17 +223,26 @@ function DataTable() {
                     sortConfig.direction === "ascending" ? UpArrow : DownArrow;
                 }
                 return (
-                  <th key={key} onClick={() => requestSort(key)} className="cursor-pointer hover:bg-neutral-200 p-2 whitespace-nowrap text-sm font-medium">
-                    <span className="inline-block align-middle">{formatSnakeCase(key.toUpperCase())}</span>
+                  <th
+                    key={key}
+                    onClick={() => requestSort(key)}
+                    className="cursor-pointer hover:bg-neutral-200 p-2 whitespace-nowrap text-sm font-medium"
+                  >
+                    <span className="inline-block align-middle">
+                      {formatCamelCase(key)}
+                    </span>
                     {arrowImage && (
                       <img
                         className="inline-block mx-2 h-3"
                         src={arrowImage}
-                        alt={sortConfig.direction === "ascending" ? "Up arrow" : "Down arrow"}
+                        alt={
+                          sortConfig.direction === "ascending"
+                            ? "Up arrow"
+                            : "Down arrow"
+                        }
                       />
                     )}
                   </th>
-
                 );
               })}
               <th>View Receipt</th>
@@ -239,8 +251,12 @@ function DataTable() {
           <tbody>
             {expenses.map((expense, index) => (
               <tr
-                className={`relative ${expense._id === activeExpense?._id ? '  outline-red-500 outline outline-4' : ''} z-${expense._id === activeExpense?._id ? '40' : 'auto'}`}
-                key={expense._id}
+                className={`relative ${
+                  expense.fileKey === activeExpense?.fileKey
+                    ? "  outline-red-500 outline outline-4"
+                    : ""
+                } z-${expense._id === activeExpense?._id ? "40" : "auto"}`}
+                key={expense.fileKey}
               >
                 <td className="flex items-center justify-center pl-3 h-8 w-full">
                   <Checkbox
@@ -251,25 +267,41 @@ function DataTable() {
                     onChange={() => handleCheckboxChange(expense._id)}
                   />
                 </td>
-                <td className="text-center px-2">
-                  {index + 1}
-                </td>
+                <td className="text-center px-2">{index + 1}</td>
                 {selectedFields.map((key) => {
+                  let confidence = 100;
+                  let backgroundColor;
+                  if (
+                    key === "totalTax" ||
+                    key === "subtotal" ||
+                    key === "total" ||
+                    key === "gratuity"
+                  ) {
+                    const subtotal = parseFloat(expense["subtotal"]) || 0;
+                    const tax = parseFloat(expense["totalTax"]) || 0;
+                    const gratuity = parseFloat(expense["gratuity"]) || 0;
+                    const total = parseFloat(expense["total"]) || 0;
+                    if (Math.abs(subtotal + tax + gratuity - total) >= 0.01) {
+                      confidence = 0;
+                    }
+                  } else if (expense[key] === "") {
+                    confidence = 0;
+                  }
+                  backgroundColor = getBackgroundColor(confidence);
+
                   return (
-                    <td key={`${expense._id.text}-${key}`}>
+                    <td key={`${expense._id}-${key}`}>
                       <input
-                        value={expense[key]?.text}
+                        value={expense[key]}
                         onChange={(e) => {
                           setExpenses((prev) => {
                             const newExpenses = [...prev];
-                            newExpenses[index][key].text = e.target.value;
-                            newExpenses[index][key].confidence =
-                              e.target.value === "" ? 0 : 100;
+                            newExpenses[index][key] = e.target.value;
                             return newExpenses;
                           });
                         }}
-                        style={{ backgroundColor: getBackgroundColor(expense[key]?.confidence || 0) }}
-                        className='text-neutral-950 relative h-8 px-2 w-full min-w-[150px] border-none font-medium text-base'
+                        style={{ backgroundColor }}
+                        className="text-neutral-950 relative h-8 px-2 w-full min-w-[150px] border-none font-medium text-base"
                       />
                     </td>
                   );
@@ -280,11 +312,7 @@ function DataTable() {
                     size="s"
                     variant="primary"
                     handleClick={async () => {
-                      await viewPDF(
-                        expense.FILE_NAME.text,
-                        expense.FILE_PAGE.text,
-                        expense
-                      );
+                      await viewPDF(expense.fileKey, expense);
                     }}
                     text="View Receipt"
                   />
@@ -293,9 +321,8 @@ function DataTable() {
             ))}
           </tbody>
         </table>
-
       )}
-
+      <div style={{ height: "60dvh", visibility: "hidden" }}></div>
     </div>
   );
 }

@@ -1,42 +1,28 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const expenseFieldSchema = new Schema({
-  text: { type: String },
-  confidence: { type: Number },
-});
-
-// Function to create a default expenseField
-const defaultExpenseField = () => ({
-  text: "", // Default text
-  confidence: 0.0, // Default confidence
-});
 
 const expenseSchema = new mongoose.Schema({
-  FILE_PAGE: { type: expenseFieldSchema, default: defaultExpenseField },
-  FILE_NAME: { type: expenseFieldSchema, default: defaultExpenseField },
-  INVOICE_RECEIPT_DATE: {
-    type: expenseFieldSchema,
-    default: defaultExpenseField,
-  },
-  VENDOR_NAME: { type: expenseFieldSchema, default: defaultExpenseField },
-  VENDOR_ADDRESS: { type: expenseFieldSchema, default: defaultExpenseField },
-  TOTAL: { type: expenseFieldSchema, default: defaultExpenseField },
-  SUBTOTAL: { type: expenseFieldSchema, default: defaultExpenseField },
-  TAX: { type: expenseFieldSchema, default: defaultExpenseField },
-  VENDOR_PHONE: { type: expenseFieldSchema, default: defaultExpenseField },
-  STREET: { type: expenseFieldSchema, default: defaultExpenseField },
-  GRATUITY: { type: expenseFieldSchema, default: defaultExpenseField },
-  CITY: { type: expenseFieldSchema, default: defaultExpenseField },
-  STATE: { type: expenseFieldSchema, default: defaultExpenseField },
-  COUNTRY: { type: expenseFieldSchema, default: defaultExpenseField },
-  ZIP_CODE: { type: expenseFieldSchema, default: defaultExpenseField },
-  CATEGORY: { type: expenseFieldSchema, default: defaultExpenseField },
+  fileKey: { type: String, default: "" },
+  transactionDate: { type: String, default: "" },
+  company: { type: String, default: "" },
+  vendorAddress: { type: String, default: "" },
+  total: { type: Number, default: 0 },
+  subtotal: { type: Number, default: 0 },
+  totalTax: { type: Number, default: 0 },
+  vendorPhone: { type: String, default: "" },
+  street: { type: String, default: "" },
+  gratuity: { type: Number, default: 0 },
+  city: { type: String, default: "" },
+  state: { type: String, default: "" },
+  country: { type: String, default: "" },
+  zipCode: { type: String, default: "" },
+  category: { type: String, default: "" },
 });
 
 const spreadsheetSchema = new Schema({
-  name: { type: String, required: true }, // Assuming each spreadsheet has a name
-  expenses: [expenseSchema], // Array of expenses
+  name: { type: String, required: true },  
+  expenses: [expenseSchema], 
 });
 
 const userSchema = new Schema(

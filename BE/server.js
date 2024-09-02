@@ -1,15 +1,14 @@
+require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
-require("dotenv").config(); // Ensuring environment variables are loaded at the very beginning
 const session = require("express-session");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const helmet = require("helmet");
 const rateLimit = require("express-rate-limit");
-const errorHandler = require("./middleware/errorHandler");
-const MongoStore = require('connect-mongo');
+const { errorHandler } = require("./middleware/errorHandler");
+const MongoStore = require("connect-mongo");
 const cookieParser = require("cookie-parser");
-
 const expenseRoutes = require("./routes/expenseRoutes");
 const userRoutes = require("./routes/userRoutes");
 const authRoutes = require("./routes/oAuthRoutes");
@@ -26,33 +25,36 @@ app.use(bodyParser.json({ limit: "50mb" }));
 app.use(bodyParser.urlencoded({ limit: "50mb", extended: true }));
 app.use(express.json());
 
-const allowedOrigins = ['http://localhost:5173', 'http://localhost:3001'];
-
-app.use(cors({
-  origin: function (origin, callback) {
-    if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
-      callback(null, true);
-    } else {
-      callback(new Error('Not allowed by CORS'));
-    }
-  },
-  credentials: true
-}));
+const allowedOrigins = ["http://localhost:5173", "http://localhost:3001"];
+app.use(
+  cors({
+    origin: function (origin, callback) {
+      if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
+    credentials: true,
+  })
+);
 
 // Session middleware
-app.use(session({
-  secret: process.env.GOOGLE_CLIENT_SECRET,
-  resave: false,
-  saveUninitialized: true,
-  store: MongoStore.create({
-    mongoUrl: process.env.MONGODB_URI,
-    collection:'sessions'
-  }),
-  cookie: {
-    secure: process.env.NODE_ENV === 'production',
-    httpOnly: true
-  }
-}));
+app.use(
+  session({
+    secret: process.env.GOOGLE_CLIENT_SECRET,
+    resave: false,
+    saveUninitialized: true,
+    store: MongoStore.create({
+      mongoUrl: process.env.MONGODB_URI,
+      collection: "sessions",
+    }),
+    cookie: {
+      secure: process.env.NODE_ENV === "production",
+      httpOnly: true,
+    },
+  })
+);
 
 // Rate limiting middleware
 const rateLimiter = rateLimit({

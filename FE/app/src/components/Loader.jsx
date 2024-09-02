@@ -1,10 +1,13 @@
-import React from 'react'
-import LoaderSvg from '../assets/animations/loader.svg'
+import React from "react";
+import LoaderSvg from "../assets/animations/loader.svg";
 
 function Loader() {
-    return (
-        <div className="flex h-full justify-center flex-col items-center"><h1 className="w-fit">Loading...</h1><img src={LoaderSvg} /></div>
-    )
+  return (
+    <div className="flex h-full m-auto justify-center flex-col items-center">
+      <h1 className="w-fit">Loading...</h1>
+      <img src={LoaderSvg} />
+    </div>
+  );
 }
 
-export default Loader
+export default Loader;

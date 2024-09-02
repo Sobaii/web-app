@@ -57,7 +57,7 @@ export const getUserExpenses = async (spreadsheetId) => {
   };
 
   return await fetchCallWrapper(
-    `${baseUrl}/expenses/${spreadsheetId}`,
+    `${baseUrl}/expenses/spreadsheet/${spreadsheetId}`,
     options
   );
 };

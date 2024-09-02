@@ -1,17 +1,40 @@
-// middleware/errorHandler.js
+class ApiError extends Error {
+  constructor(message, statusCode) {
+    super(message);
+    this.statusCode = statusCode;
+    this.isOperational = true;
+    Error.captureStackTrace(this, this.constructor);
+  }
+}
 
 const errorHandler = (err, req, res, next) => {
-    console.error(err.stack);
-    // You can customize the status code and message depending on the error
-    // For simplicity, we're using 500 as a general server error code
-    const statusCode = err.statusCode || 500;
-    const message = err.message || 'Internal Server Error';
-  
-    res.status(statusCode).json({
+  if (!(err instanceof ApiError)) {
+    err = new ApiError(
+      err.message || "Something went wrong",
+      err.statusCode || 500
+    );
+  }
+
+  console.error(err);
+
+  const statusCode = err.statusCode || 500;
+  const environment = process.env.NODE_ENV || "development";
+
+  if (environment === "development") {
+    return res.status(statusCode).json({
       success: false,
-      error: message,
+      message: err.message,
+      stack: err.stack,
+      error: err,
     });
-  };
-  
-  module.exports = errorHandler;
-  
+  }
+
+  if (environment === "production") {
+    return res.status(statusCode).json({
+      success: false,
+      message: err.isOperational ? err.message : "Internal Server Error",
+    });
+  }
+};
+
+module.exports = { ApiError, errorHandler };

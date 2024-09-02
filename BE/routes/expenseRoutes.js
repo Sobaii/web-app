@@ -4,20 +4,18 @@ const {
   uploadExpenses,
   createSpreadsheet,
   getSpreadsheet,
-  readLocalFilePage,
+  getFileUrl,
   downloadExpensesXLSX,
-  parseNumbers,
   deleteSpreadsheet
 } = require("../controllers/expenseControllers");
 const { upload } = require("../utils/multerConfig");
-const {ensureAuthenticated} = require("../middleware/authMiddleware");
+const { ensureAuthenticated } = require("../middleware/authMiddleware");
 
 // Define routes
 router.post("/upload", ensureAuthenticated, upload.array("files", 2000), uploadExpenses);
-router.post("/create-spreadsheet", ensureAuthenticated, upload.array("files", 2000), createSpreadsheet);
-router.get("/:spreadsheetId", ensureAuthenticated, getSpreadsheet);
-router.get("/convertNumbers/:spreadsheetId", ensureAuthenticated, parseNumbers);
-router.get("/readLocalFilePage/:fileName/:filePage", ensureAuthenticated, readLocalFilePage);
+router.post("/create-spreadsheet", ensureAuthenticated, createSpreadsheet);
+router.get("/spreadsheet/:spreadsheetId", ensureAuthenticated, getSpreadsheet);
+router.get("/fileUrl/:fileKey", ensureAuthenticated, getFileUrl);
 router.post("/download/:spreadsheetId", ensureAuthenticated, downloadExpensesXLSX);
 router.delete('/delete-spreadsheet', ensureAuthenticated, deleteSpreadsheet);
 

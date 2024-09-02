@@ -1,53 +1,56 @@
-const {
-  S3Client,
-  PutObjectCommand,
-  GetObjectCommand,
-} = require("@aws-sdk/client-s3");
-const { v4: uuidv4 } = require('uuid');
+const { S3Client, PutObjectCommand, DeleteObjectCommand, GetObjectCommand } = require("@aws-sdk/client-s3");
+const { getSignedUrl } = require("@aws-sdk/s3-request-presigner");
+const dotenv = require("dotenv");
+const crypto = require("crypto");
 
+dotenv.config();
+
+const randomImageName = (bytes = 32) =>
+  crypto.randomBytes(bytes).toString("hex");
+
+const region = process.env.AWS_REGION;
+const accessKeyId = process.env.AWS_ACCESS_KEY_ID;
+const secretAccessKey = process.env.AWS_SECRET_ACCESS_KEY;
 
 const s3Client = new S3Client({
-  region: process.env.AWS_REGION,
+  region,
   credentials: {
-    accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+    accessKeyId,
+    secretAccessKey,
   },
 });
 
-async function uploadFileToS3(bucketName, buffer) {
-  const fileKey = uuidv4();
-  const uploadParams = {
+async function s3UploadFile(bucketName, buffer, mimetype) {
+  const params = {
     Bucket: bucketName,
-    Key: fileKey,
+    Key: randomImageName(),
     Body: buffer,
-    ServerSideEncryption: "AES256",
-    ContentDisposition: "inline",
-    ContentType: "image/jpeg",
+    ContentType: mimetype,
   };
 
-  try {
-    const result = await s3Client.send(new PutObjectCommand(uploadParams));
-    return {result, fileKey};
-  } catch (err) {
-    console.error(err);
-    throw new Error("Error uploading file to S3");
-  }
+  await s3Client.send(new PutObjectCommand(params));
+  return params.Key
 }
 
-async function readFileFromS3(bucketName, fileName) {
-  
-  const downloadParams = {
+async function s3GetFileSignedUrl(bucketName, key) {
+  const params = {
     Bucket: bucketName,
-    Key: fileName,
+    Key: key,
   };
 
-  try {
-    const data = await s3Client.send(new GetObjectCommand(downloadParams));
-    return data.Body; 
-  } catch (err) {
-    console.error(err);
-    throw new Error("Error downloading file from S3");
-  }
+  const url = await getSignedUrl(s3Client, new GetObjectCommand(params), {
+    expiresIn: 3600,
+  });
+  return url;
 }
 
-module.exports = { uploadFileToS3, readFileFromS3 };
+async function s3DeleteFile(bucketName, key) {
+  const deleteParams = {
+    Bucket: bucketName,
+    Key: key,
+  };
+  const result = await s3Client.send(new DeleteObjectCommand(deleteParams));
+  return result;
+}
+
+module.exports = { s3UploadFile, s3GetFileSignedUrl, s3DeleteFile };

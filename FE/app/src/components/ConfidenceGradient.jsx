@@ -4,10 +4,12 @@ import Card from "./Card";
 
 function ConfidenceGradient() {
   return (
-    <Card className="border  p-5 bg-white w-fit gap-10 rounded-lg flex justify-between flex-row">
+    <Card className="border p-5 bg-white w-fit gap-10 rounded-lg flex justify-between flex-row">
       <div className="max-w-96 flex flex-col gap-2">
         <h2>Confidence Score</h2>
-        <p className="text-sm">A higher confidence score means that Textract is more certain about its extraction, whereas a lower score suggests less certainty.</p>
+        <p className="text-sm">
+          Higher scores (green) indicate more certainty, while lower scores (red) suggest potential errors.
+        </p>
       </div>
       <div className="flex justify-center gap-3">
         {Array.from({ length: 10 }, (_, index) => {

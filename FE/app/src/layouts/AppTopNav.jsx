@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Logo from "../assets/logo.svg";
 
 import { LuBarChartBig } from "react-icons/lu";
@@ -37,6 +37,13 @@ function AppTopNav() {
   }
 
   const { user } = useUserAuth();
+
+  useEffect(() => {
+    if (user === null) {
+      // navigate('/');
+    }
+  }, [user, navigate]);
+
   return (
     <main className="border-b z-40 bg-white border-neutral-200 relative w-full h-24 py-4 px-6 gap-6 flex flex-col">
       <div className="w-full h-6 flex justify-between">

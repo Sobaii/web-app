@@ -1,6 +1,6 @@
 import "./App.css";
 import React, { useEffect, useState } from "react";
-import { Routes, Route, Outlet } from "react-router-dom";
+import { Routes, Route, Outlet, useNavigate } from "react-router-dom";
 import Home from "./pages/Home";
 import Expenses from "./pages/Expenses";
 import { Toaster } from "sonner";
@@ -12,21 +12,41 @@ import { authenticateUser, getUserGoogleInfo } from "./services/userServices";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import SplineModel from "./components/SplineModel";
+import Loader from "./components/Loader";
 
 function AppLayout() {
   const { user, setUser } = useUserAuth();
+  const navigate = useNavigate();
+  const [isLoading, setIsLoading] = useState(true);
+
   useEffect(() => {
     const fetchUserGoogleData = async () => {
+      setIsLoading(true);
       try {
         const data = await authenticateUser();
-        setUser(data)
+        if (data) {
+          setUser(data);
+        } else {
+          navigate("/");
+        }
       } catch (error) {
-        // window.location.href = "http://localhost:5173/";
-        console.error('Failed to fetch Google user data:', error);
+        console.error("Failed to fetch Google user data:", error);
+        navigate("/");
+      } finally {
+        setIsLoading(false);
       }
-    }
+    };
     fetchUserGoogleData();
   }, []);
+
+  if (isLoading) {
+    return (
+      <div className="h-screen">
+        <Loader />
+      </div>
+    );
+  }
+
   return (
     <>
       {/* <SplineModel show={Boolean(!user)} /> */}
@@ -43,9 +63,9 @@ function AppLayout() {
 function App() {
   return (
     <UserAuthProvider>
-      <div className="bg-neutral-50 min-h-screen w-fit min-w-full">
+      <div className="bg-neutral-50  min-h-screen w-fit min-w-full">
         <Toaster
-          richColors 
+          richColors
           toastOptions={{
             className: "sonnerToast",
           }}
@@ -55,7 +75,10 @@ function App() {
           <Route path="/signup" element={<Signup />} />
           <Route element={<AppLayout />}>
             <Route path="/expenses" element={<Expenses />} />
-            <Route path="/expenses/spreadsheet" element={<ExpensesSpreadsheet />} />
+            <Route
+              path="/expenses/spreadsheet"
+              element={<ExpensesSpreadsheet />}
+            />
             <Route path="/settings" element={<Settings />} />
           </Route>
         </Routes>
@@ -65,4 +88,3 @@ function App() {
 }
 
 export default App;
-

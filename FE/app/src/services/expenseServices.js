@@ -2,18 +2,17 @@ import fetchCallWrapper from "./fetchCallWrapper";
 
 const baseUrl = "http://localhost:3000/expenses";
 
-export const readLocalFilePage = async (fileName, filePage) => {
-  const url = `${baseUrl}/readLocalFilePage/${fileName}/${filePage}`;
+export const getFileUrl = async (fileName) => {
+  const url = `${baseUrl}/fileUrl/${fileName}`;
   const options = {
     method: "GET",
   };
 
   try {
-    const response = await fetchCallWrapper(url, options, false);
-    const blob = await response.blob();
-    return URL.createObjectURL(blob);
+    const response = await fetchCallWrapper(url, options);
+    return response.url;
   } catch (error) {
-    console.error("Failed to read S3 file page:", error);
+    console.error("Failed to read S3 file:", error);
     throw error;
   }
 };
@@ -75,18 +74,6 @@ export const uploadExpenses = async (files, spreadsheetId) => {
   return await fetchCallWrapper(`${baseUrl}/upload`, options);
 };
 
-export const convertNumbers = async (spreadsheetId) => {
-  const options = {
-    method: "GET",
-    credentials: "include",
-  };
-
-  return await fetchCallWrapper(
-    `${baseUrl}/convertNumbers/${spreadsheetId}`,
-    options
-  );
-};
-
 export const createSpreadsheet = async (spreadsheetName) => {
   const options = {
     method: "POST",
@@ -96,7 +83,6 @@ export const createSpreadsheet = async (spreadsheetName) => {
   return await fetchCallWrapper(`${baseUrl}/create-spreadsheet`, options);
 };
 
-
 export const deleteSpreadsheet = async (spreadsheetId) => {
   const options = {
     method: "DELETE",
@@ -104,4 +90,4 @@ export const deleteSpreadsheet = async (spreadsheetId) => {
     body: JSON.stringify({ spreadsheetId }),
   };
   return await fetchCallWrapper(`${baseUrl}/delete-spreadsheet`, options);
-}
+};

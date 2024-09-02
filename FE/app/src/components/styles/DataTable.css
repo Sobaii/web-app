@@ -20,7 +20,7 @@ td > input:hover {
   outline: 2px solid black;
 }
 td > input:focus {
-  z-index: 39;
+  z-index: 40;
   outline: 3px solid black;
   animation: glow 1.25s infinite alternate ease-in;
 }
