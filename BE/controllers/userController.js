@@ -100,7 +100,7 @@ const updateUser = asyncHandler(async (req, res) => {
 
 const updateUserExpense = asyncHandler(async (req, res) => {
   const { expenses, spreadsheetId } = req.body;
-  const user = await User.findById(req.session.user.id);
+  const { user } = req;
   try {
     const spreadsheet = user.spreadsheets.id(spreadsheetId);
 
@@ -119,7 +119,7 @@ const updateUserExpense = asyncHandler(async (req, res) => {
 
 const updateUserSpreadsheetName = asyncHandler(async (req, res) => {
   const { name, spreadsheetId } = req.body;
-  const user = await User.findById(req.session.user.id);
+  const { user } = req;
   try {
     const spreadsheet = user.spreadsheets.id(spreadsheetId);
 
@@ -139,7 +139,7 @@ const updateUserSpreadsheetName = asyncHandler(async (req, res) => {
 });
 
 const getUserSpreadsheetsInfo = asyncHandler(async (req, res) => {
-  const user = await User.findById(req.session.user.id);
+  const { user } = req;
   try {
     user.populate({
       path: "spreadsheets",

@@ -12,13 +12,17 @@ const Input = forwardRef(({
 }, ref) => {
     const handleInputChange = (e) => {
         const value = e.target.value;
-        if (inputType === 'float' && !/^\d*\.?\d*$/.test(value)) {
-            e.preventDefault();
-            return;
+        if (inputType === 'float') {
+            if (/[+-]?([0-9]+([.][0-9]*)?|[.][0-9]+)/.test(value)) {
+                e.preventDefault();
+                return;
+            }
         }
-        if (inputType === 'int' && !/^\d*$/.test(value)) {
-            e.preventDefault();
-            return;
+        if (inputType === 'int') {
+            if (!/^-?\d*$/.test(value) && value !== '0') {
+                e.preventDefault();
+                return;
+            }
         }
         if (props.onChange) {
             props.onChange(e);
@@ -32,7 +36,7 @@ const Input = forwardRef(({
             <input
                 ref={ref}
                 placeholder={placeHolder}
-                type={inputType === 'string' ? 'text' : 'text'} // Set type to text for custom validation
+                type='text'
                 className={`rounded-lg border bg-white text-black border-neutral-300 pl-3 pr-3 py-2 ${iconSrc ? 'pl-9' : 'pl-3'} ${error ? 'border-red-500' : 'border-neutral-300'} ${className} ${fullWidth ? 'w-full' : 'min-w-[320px]'}`}
                 onChange={handleInputChange}
                 {...props}

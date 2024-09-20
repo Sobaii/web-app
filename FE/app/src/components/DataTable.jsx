@@ -26,6 +26,8 @@ import UploadFileIcon from "../assets/upload-file.svg";
 import DownloadFileIcon from "../assets/download-file.svg";
 import SaveFileIcon from "../assets/save-file.svg";
 
+const numericKeys = ["subtotal", "totalTax", "total", "gratuity"];
+
 function DataTable() {
   const [expenses, setExpenses] = useState([]);
   const [spreadsheetName, setSpreadsheetName] = useState("");
@@ -155,7 +157,7 @@ function DataTable() {
           />
         )}
         <Button
-          text="Upload File"
+          text="Upload Files"
           onClick={(e) => setShowUploadModal(true)}
           imageSrc={UploadFileIcon}
         />
@@ -252,8 +254,8 @@ function DataTable() {
             {expenses.map((expense, index) => (
               <tr
                 className={`relative ${
-                  expense.fileKey === activeExpense?.fileKey
-                    ? "  outline-red-500 outline outline-4"
+                  expense === activeExpense
+                    ? "outline-red-500 outline outline-4 z-40"
                     : ""
                 } z-${expense._id === activeExpense?._id ? "40" : "auto"}`}
                 key={expense.fileKey}
@@ -271,17 +273,13 @@ function DataTable() {
                 {selectedFields.map((key) => {
                   let confidence = 100;
                   let backgroundColor;
-                  if (
-                    key === "totalTax" ||
-                    key === "subtotal" ||
-                    key === "total" ||
-                    key === "gratuity"
-                  ) {
-                    const subtotal = parseFloat(expense["subtotal"]) || 0;
-                    const tax = parseFloat(expense["totalTax"]) || 0;
-                    const gratuity = parseFloat(expense["gratuity"]) || 0;
+                  if (numericKeys.includes(key)) {
+                    const sum = numericKeys.reduce(
+                      (acc, k) => acc + (parseFloat(expense[k]) || 0),
+                      0
+                    );
                     const total = parseFloat(expense["total"]) || 0;
-                    if (Math.abs(subtotal + tax + gratuity - total) >= 0.01) {
+                    if (Math.abs(sum - total * 2) >= 0.01) {
                       confidence = 0;
                     }
                   } else if (expense[key] === "") {
@@ -294,6 +292,10 @@ function DataTable() {
                       <input
                         value={expense[key]}
                         onChange={(e) => {
+                          if (numericKeys.includes(key) && !/^-?\d*\.?\d*$/.test(e.target.value)) {
+                            e.preventDefault();
+                            return;
+                          }
                           setExpenses((prev) => {
                             const newExpenses = [...prev];
                             newExpenses[index][key] = e.target.value;
