@@ -46,8 +46,8 @@ const Button = ({
       type={type}
       disabled={disabled || isLoading}
       onClick={(e) => onClick(e)}
-      {...props}
       className={buttonClass}
+      {...props}
     >
       {imageSrc && !isLoading && <img src={imageSrc} alt={text} className="h-4 w-4" />}
       {isLoading && (

@@ -13,10 +13,7 @@ const { analyzeFile } = require("../services/ocrService");
 const BUCKET_NAME = "accounting-ai-td";
 
 const createSpreadsheet = asyncHandler(async (req, res) => {
-  const {
-    user,
-    body: { spreadsheetName },
-  } = req;
+  const { user, body: { spreadsheetName } } = req;
   user.spreadsheets.push({ name: spreadsheetName, expenses: [] });
   await user.save();
   res.json(user.spreadsheets[user.spreadsheets.length - 1]);
@@ -25,12 +22,11 @@ const createSpreadsheet = asyncHandler(async (req, res) => {
 const getFileUrl = asyncHandler(async (req, res) => {
   const { fileKey } = req.params;
   const url = await s3GetFileSignedUrl(BUCKET_NAME, fileKey);
-  res.json({url});
+  res.json({ url });
 });
 
 const uploadExpenses = asyncHandler(async (req, res) => {
-  if (!req.files || req.files.length === 0)
-    throw new ApiError("No files uploaded", 400);
+  if (!req.files || req.files.length === 0) throw new ApiError("No files uploaded", 400);
   const { spreadsheetId } = req.body;
   const processedResults = await Promise.all(
     req.files.map(async (file) => {
@@ -42,16 +38,12 @@ const uploadExpenses = asyncHandler(async (req, res) => {
       } else if (file.mimetype === "application/pdf") {
         fileBuffer = file.buffer;
       } else {
-        throw new ApiError("Unsupported file type", 400);
+        throw new ApiError("Unsupported file type", 400);  
       }
-      const fileKey = await s3UploadFile(
-        BUCKET_NAME,
-        fileBuffer,
-        file.mimetype
-      );
+      const fileKey = await s3UploadFile(BUCKET_NAME, fileBuffer, file.mimetype);
       const url = await s3GetFileSignedUrl(BUCKET_NAME, fileKey);
       const data = await analyzeFile(url);
-      return { ...data, fileKey };
+      return { ...data, fileKey }
     })
   );
 
@@ -61,6 +53,7 @@ const uploadExpenses = asyncHandler(async (req, res) => {
   );
   res.json(processedResults);
 });
+
 
 const getSpreadsheetFunction = async (req, res) => {
   const { spreadsheetId } = req.params;
@@ -97,10 +90,7 @@ const downloadExpensesXLSX = asyncHandler(async (req, res) => {
   });
 
   const buffer = xlsx.write(workbook, { type: "buffer", bookType: "xlsx" });
-  res.setHeader(
-    "Content-Type",
-    "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
-  );
+  res.setHeader("Content-Type", "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
   res.setHeader("Content-Disposition", 'attachment; filename="Expenses.xlsx"');
   res.send(buffer);
 });

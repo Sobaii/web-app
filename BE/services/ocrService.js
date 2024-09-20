@@ -1,7 +1,7 @@
 const OpenAI = require("openai");
 
 const openai = new OpenAI({
-  apiKey: "sk-proj-7sfry0N9kkFMzT6lYKgcT3BlbkFJlMVfnejh47Ntgwrh3OEX",
+  apiKey: "",
 });
 
 const categories = [
