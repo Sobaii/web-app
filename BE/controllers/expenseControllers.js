@@ -64,6 +64,7 @@ const getSpreadsheetFunction = async (req, res) => {
 
 const getSpreadsheet = asyncHandler(async (req, res) => {
   const spreadsheet = await getSpreadsheetFunction(req, res);
+  spreadsheet.lastOpened = Date.now();
   res.json(spreadsheet);
 });
 

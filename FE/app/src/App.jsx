@@ -1,18 +1,16 @@
 import "./App.css";
 import React, { useEffect, useState } from "react";
 import { Routes, Route, Outlet, useNavigate } from "react-router-dom";
-import Home from "./pages/Home";
 import Expenses from "./pages/Expenses";
 import { Toaster } from "sonner";
 import AppTopNav from "./layouts/AppTopNav";
-import Settings from "./pages/settings/Settings";
+import Settings from "./pages/Settings";
 import ExpensesSpreadsheet from "./pages/ExpensesSpreadsheet";
 import { UserAuthProvider, useUserAuth } from "./data/contexts/UserAuthContext";
 import { authenticateUser, getUserGoogleInfo } from "./services/userServices";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
-import SplineModel from "./components/SplineModel";
-import Loader from "./components/Loader";
+import { SplineModel, Loader } from "./components/ui";
 
 function AppLayout() {
   const { user, setUser } = useUserAuth();

@@ -1,7 +1,6 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-
 const expenseSchema = new mongoose.Schema({
   fileKey: { type: String, default: "" },
   transactionDate: { type: String, default: "" },
@@ -21,8 +20,11 @@ const expenseSchema = new mongoose.Schema({
 });
 
 const spreadsheetSchema = new Schema({
-  name: { type: String, required: true },  
-  expenses: [expenseSchema], 
+  name: { type: String, required: true },
+  expenses: [expenseSchema],
+  createdAt: { type: Date, default: Date.now },
+  lastOpened: { type: Date, default: Date.now },
+  screenshotPreviewUrl: { type: String, default: null },
 });
 
 const userSchema = new Schema(

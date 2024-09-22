@@ -2,12 +2,9 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { loginUser, signUpUserWithGoogle } from '../services/userServices';
-import ColouredLongLogo from '../assets/logos/coloured-long-logo.svg';
 import LandingAnimation from '../components/LandingAnimation';
-import Separator from '../components/Separator';
-import Button from '../components/Button';
-import Input from '../components/Input';
-import GoogleLogo from '../assets/logos/google-logo.svg';
+import { Separator, Button, Input } from '../components/ui';
+import { GoogleLogo, ColouredLongLogo } from '../assets/logos';
 
 function Login() {
     const [errorMessage, setErrorMessage] = useState('');

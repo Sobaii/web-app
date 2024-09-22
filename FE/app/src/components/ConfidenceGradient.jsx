@@ -1,6 +1,6 @@
 import React from "react";
-import getBackgroundColor from "../util/getBackgroundColor";
-import Card from "./Card";
+import { getBackgroundColor } from '../util/expenseUtils'
+import { Card } from "./ui";
 
 function ConfidenceGradient() {
   return (

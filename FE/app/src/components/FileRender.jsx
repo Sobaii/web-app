@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
-import Button from "./Button";
+import { Button } from "./ui";
 
 function FileRender({ fileUrl, handleClose }) {
-  const [height, setHeight] = useState(300);  
+  const [height, setHeight] = useState(300);
   const [isDragging, setIsDragging] = useState(false);
   const containerRef = useRef(null);
   const startYRef = useRef(0);
@@ -24,8 +24,8 @@ function FileRender({ fileUrl, handleClose }) {
   };
 
   const handleMouseDown = (e) => {
-    e.preventDefault(); 
-    e.stopPropagation();  
+    e.preventDefault();
+    e.stopPropagation();
     setIsDragging(true);
     startYRef.current = e.clientY;
     currentHeightRef.current = height;
@@ -50,7 +50,7 @@ function FileRender({ fileUrl, handleClose }) {
         left: "0",
         right: "0",
         bottom: "0",
-        maxHeight:'100vh',
+        maxHeight: '100vh',
         height: `${height}px`,
         width: "100%",
         display: "flex",

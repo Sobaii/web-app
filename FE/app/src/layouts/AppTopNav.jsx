@@ -1,15 +1,12 @@
 import React, { useState, useEffect } from "react";
-import Logo from "../assets/logo.svg";
+import { ColouredLongLogo } from "../assets/logos";
 
 import { LuBarChartBig } from "react-icons/lu";
 import { IoSettingsOutline } from "react-icons/io5";
-import { useLocation } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { logoutUser } from "../services/userServices";
 import { useUserAuth } from "../data/contexts/UserAuthContext";
-import Popover from "../components/Popover";
-import Card from "../components/Card";
-import Button from "../components/Button";
+import { Popover, Card, Button } from '../components/ui'
 
 const SideNavLink = ({ IconComponent, label, href }) => {
   const navigate = useNavigate();
@@ -47,7 +44,7 @@ function AppTopNav() {
   return (
     <main className="border-b z-40 bg-white border-neutral-200 relative w-full h-24 py-4 px-6 gap-6 flex flex-col">
       <div className="w-full h-6 flex justify-between">
-        <img onClick={() => navigate('/expenses')} className="cursor-pointer h-6 w-fit" src={Logo} alt="Logo" />
+        <img onClick={() => navigate('/expenses')} className="cursor-pointer h-6 w-fit" src={ColouredLongLogo} alt="ColouredLongLogo" />
         {user && (
           user.picture ? (
             <Popover position="down-left">

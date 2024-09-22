@@ -1,18 +1,11 @@
-import React, { useState, useEffect, useCallback } from "react";
-import DataTable from "../components/DataTable";
-import ConfidenceGradient from "../components/ConfidenceGradient";
-import Input from "../components/Input";
-import Button from "../components/Button";
+import React, { useState, useEffect } from "react";
+import { Input, Button, Card, Modal, Loader, Icon, Popover, Separator } from '../components/ui'
 import { getUserSpreadsheetsShallowInfo } from "../services/userServices";
-import Card from "../components/Card";
 import { useNavigate } from "react-router-dom";
-import getBackgroundColor from "../util/getBackgroundColor";
-import Modal from "../components/Modal";
+import { getBackgroundColor } from "../util/expenseUtils";
 import { createSpreadsheet, deleteSpreadsheet } from "../services/expenseServices";
-import EllipsisIcon from '../assets/ellipsis.svg'
-import Loader from "../components/Loader";
-import Icon from "../components/Icon";
-import Popover from "../components/Popover";
+import { EllipsisIcon } from '../assets/icons'
+import { convertToReadableDate } from "../util/dateUtils";
 
 function Expenses() {
   const [search, setSearch] = useState("");
@@ -70,37 +63,30 @@ function Expenses() {
           <Input placeholder="Search collections" fullWidth value={search} onChange={(e) => setSearch(e.target.value)} />
           <Button text='Create new collection' handleClick={() => setShowCreateModal(true)} />
         </div>
-        <div className="grid grid-min-max gap-4">
-          {loading ? <Loader /> : (
-            filteredSpreadsheets.length === 0 ? <p>No spreadsheets found</p>
+        {loading ? <Loader /> :
+         <div class="grid grid-cols-[repeat(auto-fit,425px)] gap-4">
+            {filteredSpreadsheets.length === 0 ? <p>No spreadsheets found</p>
               :
               filteredSpreadsheets.map((spreadsheet, index) => (
-                <Card key={index} className='col-span-1 hover:shadow-xl hover:border-neutral-800 transition-shadow cursor-pointer flex' onClick={() => navigate(`/expenses/spreadsheet?spreadsheet=${spreadsheet.id}`)}>
-                  <div className='flex gap-3 justify-between'>
-                    <h2 className="whitespace-nowrap truncate">{spreadsheet.name}</h2>
-                    <Popover position="down-left">
-                      <Icon image={EllipsisIcon} />
-                      <Card className='w-fit p-2'>
-                        <Button handleClick={() => { setShowDeleteModal(true); setSpreadsheetToDelete(spreadsheet) }} text='Delete' variant='destructive' />
-                      </Card>
-                    </Popover>
+                <Card key={index} className='p-0 gap-0 border-2 overflow-hidden col-span-1 max-h-[600px] hover:border-blue-500 cursor-pointer flex' onClick={() => navigate(`/expenses/spreadsheet?spreadsheet=${spreadsheet.id}`)}>
+                  <div className="p-5 gap-1 flex flex-col">
+                    <div className='flex gap-3 justify-between items-center'>
+                      <h2 className="whitespace-nowrap truncate">{spreadsheet.name}</h2>
+                      <Popover position="down-left">
+                        <Icon image={EllipsisIcon} />
+                        <Card className='w-fit p-2'>
+                          <Button handleClick={() => { setShowDeleteModal(true); setSpreadsheetToDelete(spreadsheet) }} text='Delete' variant='destructive' />
+                        </Card>
+                      </Popover>
+                    </div>
+                    <p className="text-slate-500">{spreadsheet.numberOfExpenses} items</p>
+                    <p className="text-slate-500">Opened {convertToReadableDate(spreadsheet.lastOpened)}</p>
                   </div>
-                  <p>{spreadsheet.numberOfExpenses} items</p>
-                  <div className="flex flex-col border">
-                    {spreadsheet.confidenceOverview.map((expense, index) => {
-                      return (
-                        <div key={index} className="flex">
-                          {Object.keys(expense).map((key, index) => (
-                            <p key={index} style={{ backgroundColor: getBackgroundColor(expense[key]?.confidence || 0) }} className="w-full h-3 border"></p>
-                          ))}
-                        </div>
-                      )
-                    })}
-                  </div>
+                  <img src={spreadsheet.screenshotPreviewUrl} className="w-full" />
                 </Card>
-              ))
-          )}
-        </div>
+              ))}
+          </div>
+        }
       </div>
       <Modal showModal={showCreateModal} setShowModal={setShowCreateModal}>
         <h2>Create new collection</h2>

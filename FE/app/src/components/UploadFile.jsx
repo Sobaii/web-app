@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
-import Button from "./Button";
-import Modal from "./Modal";
+import { Button, Modal } from "./ui";
 import { uploadExpenses } from "../services/expenseServices";
 import { toast } from "sonner";
-import UploadFileIcon from "../assets/upload-file.svg";
+import { UploadFileIcon } from "../assets/icons";
 
 export default function UploadFile({
   showUploadModal,
@@ -110,9 +109,8 @@ export default function UploadFile({
         </ul>
       </div>
       <label
-        className={`flex flex-col items-center justify-center border-dashed border-2 border-gray-300 bg-gray-50 rounded-lg h-64 transition-colors duration-300 cursor-pointer ${
-          isDragging ? "border-blue-500 bg-blue-50" : "hover:bg-gray-100"
-        }`}
+        className={`flex flex-col items-center justify-center border-dashed border-2 border-gray-300 bg-gray-50 rounded-lg h-64 transition-colors duration-300 cursor-pointer ${isDragging ? "border-blue-500 bg-blue-50" : "hover:bg-gray-100"
+          }`}
         htmlFor="fileInput"
         onDragEnter={handleDragEnter}
         onDragOver={handleDragOver}
@@ -210,9 +208,8 @@ export default function UploadFile({
           text={
             selectedFiles.length === 0
               ? "No files selected"
-              : `Upload ${selectedFiles.length} ${
-                  selectedFiles.length === 1 ? "file" : "files"
-                }`
+              : `Upload ${selectedFiles.length} ${selectedFiles.length === 1 ? "file" : "files"
+              }`
           }
           variant="primary"
           handleClick={handleUpload}

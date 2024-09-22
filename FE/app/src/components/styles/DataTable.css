@@ -1,19 +1,7 @@
-table {
-  border-collapse: separate;
-  width: 100%;
-  background-color: var(--neutral-1);
-  border-spacing: 1px;
-}
 
-th {
-  white-space: nowrap;
-  font-size: var(--font-size-sm);
-  font-weight: 500;
-}
-
-td {
-  width: fit-content;
-  white-space: nowrap;
+tr:hover { 
+  z-index: 30;
+  outline: 1px solid black;
 }
 td > input:hover {
   z-index: 39;

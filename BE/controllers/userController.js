@@ -1,6 +1,9 @@
 const asyncHandler = require("express-async-handler");
 const User = require("../schemas/userSchema");
 const bcrypt = require("bcrypt");
+const { s3UploadFile, s3GetFileSignedUrl } = require("../services/s3Service");
+
+const BUCKET_NAME = "accounting-ai-td";
 
 const authenticateUser = asyncHandler(async (req, res) => {
   if (req.session.user.id) {
@@ -99,7 +102,7 @@ const updateUser = asyncHandler(async (req, res) => {
 });
 
 const updateUserExpense = asyncHandler(async (req, res) => {
-  const { expenses, spreadsheetId } = req.body;
+  const { expenses, spreadsheetId, previewBuffer } = req.body;
   const { user } = req;
   try {
     const spreadsheet = user.spreadsheets.id(spreadsheetId);
@@ -107,6 +110,10 @@ const updateUserExpense = asyncHandler(async (req, res) => {
     if (!spreadsheet) {
       res.status(404).json({ message: "Spreadsheet not found" });
       return;
+    }
+
+    if (previewBuffer) {
+      spreadsheet.previewBuffer = previewBuffer;
     }
 
     spreadsheet.expenses = expenses;
@@ -137,6 +144,29 @@ const updateUserSpreadsheetName = asyncHandler(async (req, res) => {
     });
   }
 });
+const updateUserSpreadsheetScreenshot = asyncHandler(async (req, res) => {
+  const { spreadsheetId } = req.params;
+  const { user } = req;
+  const spreadsheet = user.spreadsheets.id(spreadsheetId);
+
+  if (!spreadsheet) {
+    res.status(404).json({ message: "Spreadsheet not found" });
+    return;
+  }
+
+  const fileKey = await s3UploadFile(
+    BUCKET_NAME,
+    req.file.buffer,
+    req.file.mimetype
+  );
+
+  const url = await s3GetFileSignedUrl(BUCKET_NAME, fileKey);
+
+  spreadsheet.screenshotPreviewUrl = url;
+  await user.save();
+
+  res.json({ url });
+});
 
 const getUserSpreadsheetsInfo = asyncHandler(async (req, res) => {
   const { user } = req;
@@ -152,7 +182,9 @@ const getUserSpreadsheetsInfo = asyncHandler(async (req, res) => {
       name: spreadsheet.name,
       id: spreadsheet._id,
       numberOfExpenses: spreadsheet.expenses.length,
-      confidenceOverview: spreadsheet.expenses.slice(0, 10),
+      lastOpened: spreadsheet.lastOpened,
+      createdAt: spreadsheet.createdAt,
+      screenshotPreviewUrl: spreadsheet.screenshotPreviewUrl,
     }));
     res.status(200).json(spreadsheetInfo);
   } catch (error) {
@@ -171,4 +203,5 @@ module.exports = {
   updateUserExpense,
   getUserSpreadsheetsInfo,
   updateUserSpreadsheetName,
+  updateUserSpreadsheetScreenshot,
 };
