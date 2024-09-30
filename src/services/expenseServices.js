@@ -67,7 +67,6 @@ export const uploadExpenses = async (files, spreadsheetId) => {
 
   const options = {
     method: "POST",
-    credentials: "include",
     body: formData,
   };
 

@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Button } from "./ui";
 
-function FileRender({ fileUrl, handleClose }) {
-  const [height, setHeight] = useState(300);
+function ExpenseRender({ fileUrl, handleClose }) {
+  const [height, setHeight] = useState(500);
   const [isDragging, setIsDragging] = useState(false);
   const containerRef = useRef(null);
   const startYRef = useRef(0);
@@ -102,4 +102,4 @@ function FileRender({ fileUrl, handleClose }) {
   );
 }
 
-export default FileRender;
+export default ExpenseRender;

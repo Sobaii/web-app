@@ -6,7 +6,7 @@ import useDataTable from '../hooks/useDataTable'
 import { numericKeys } from '../util/expenseUtils'
 import { getAllKeysInObjectArray } from '../util'
 
-import FileRender from './FileRender'
+import ExpenseRender from './ExpenseRender'
 import UploadFile from "./UploadFile";
 
 import { Button, MultiSelect, Loader, Card, Input } from "../components/ui";
@@ -84,7 +84,7 @@ function DataTable() {
           </>
         )}
         {viewingFileUrl && (
-          <FileRender
+          <ExpenseRender
             fileUrl={viewingFileUrl}
             handleClose={() => {
               setActiveExpense(null);

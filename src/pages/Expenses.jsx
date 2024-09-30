@@ -1,16 +1,12 @@
-import React, { useState, useEffect } from "react";
-import { Input, Button, Card, Modal, Loader, Icon, Popover, Separator } from '../components/ui'
-import { getUserSpreadsheetsShallowInfo } from "../services/userServices";
+import React, { useState } from "react";
+import { Input, Button, Card, Modal, Loader, Icon, Popover } from '../components/ui'
 import { useNavigate } from "react-router-dom";
-import { getBackgroundColor } from "../util/expenseUtils";
-import { createSpreadsheet, deleteSpreadsheet } from "../services/expenseServices";
 import { EllipsisIcon } from '../assets/icons'
 import { convertToReadableDate } from "../util/dateUtils";
+import { useSpreadsheets } from "../hooks/useSpreadsheets";
 
 function Expenses() {
   const [search, setSearch] = useState("");
-  const [spreadsheets, setSpreadsheets] = useState([]);
-  const [loading, setLoading] = useState(true);
   const [showCreateModal, setShowCreateModal] = useState(false);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [spreadsheetToDelete, setSpreadsheetToDelete] = useState(null);
@@ -18,19 +14,12 @@ function Expenses() {
 
   const navigate = useNavigate();
 
-  useEffect(() => {
-    const getSpreadsheetShallowData = async () => {
-      setLoading(true);
-      try {
-        const response = await getUserSpreadsheetsShallowInfo();
-        setSpreadsheets(response);
-      } catch (error) {
-        console.error("Error getting spreadsheet shallow data", error);
-      }
-      setLoading(false);
-    };
-    getSpreadsheetShallowData();
-  }, []);
+  const {
+    spreadsheets,
+    loading,
+    createSpreadsheet,
+    deleteSpreadsheet
+  } = useSpreadsheets();
 
   const handleCreateSpreadsheet = async () => {
     if (!spreadsheetName) return;
@@ -45,7 +34,6 @@ function Expenses() {
   const handleDeleteSpreadsheet = async () => {
     try {
       await deleteSpreadsheet(spreadsheetToDelete.id);
-      setSpreadsheets(spreadsheets.filter(spreadsheet => spreadsheet.id !== spreadsheetToDelete.id));
       setShowDeleteModal(false);
     } catch (error) {
       console.error("Error deleting spreadsheet", error);
@@ -64,7 +52,7 @@ function Expenses() {
           <Button text='Create new collection' handleClick={() => setShowCreateModal(true)} />
         </div>
         {loading ? <Loader /> :
-         <div class="grid grid-cols-[repeat(auto-fit,425px)] gap-4">
+          <div className="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-4">
             {filteredSpreadsheets.length === 0 ? <p>No spreadsheets found</p>
               :
               filteredSpreadsheets.map((spreadsheet, index) => (
@@ -82,6 +70,7 @@ function Expenses() {
                     <p className="text-slate-500">{spreadsheet.numberOfExpenses} items</p>
                     <p className="text-slate-500">Opened {convertToReadableDate(spreadsheet.lastOpened)}</p>
                   </div>
+
                   <img src={spreadsheet.screenshotPreviewUrl} className="w-full" />
                 </Card>
               ))}
