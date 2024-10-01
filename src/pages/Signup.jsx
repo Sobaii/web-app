@@ -72,7 +72,7 @@ function Signup() {
                   /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]).{8,}$/,
                 message:
                   "Password must contain 8 characters, 1 uppercase letter, 1 number, and 1 special character",
-              }, c
+              },
             })}
             error={errors.password?.message}
             placeHolder="Enter your password"
