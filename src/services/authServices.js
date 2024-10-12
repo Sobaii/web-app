@@ -1,6 +1,6 @@
 import fetchCallWrapper from "./fetchCallWrapper";
 
-const baseUrl = "https://3.128.94.79:3000/auth";
+const baseUrl = "3.128.94.79:3000/auth";
 
 export const signUpUserWithGoogle = async () => {
   const options = {
