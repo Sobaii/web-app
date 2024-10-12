@@ -1,8 +1,8 @@
 import { convertHTMLElementToImage } from "../util";
 import fetchCallWrapper from "./fetchCallWrapper";
 
-const baseUrl = "3.128.94.79:3000/users";
-const expensesBaseUrl = "3.128.94.79:3000/expenses";
+const baseUrl = "https://3.128.94.79:3000/users";
+const expensesBaseUrl = "https://3.128.94.79:3000/expenses";
 
 export const authenticateUser = async () => {
   const options = {
