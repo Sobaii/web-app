@@ -7,6 +7,8 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "sync": "aws s3 --region 'us-east-2' sync ./dist 's3://sobaii.ca/'",
+    "invalidate": "aws cloudfront --region 'us-east-2' create-invalidation --distribution-id ECB00V9P9MRGB --paths '/*'",
     "preview": "vite preview"
   },
   "dependencies": {

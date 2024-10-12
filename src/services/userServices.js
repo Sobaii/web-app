@@ -1,13 +1,14 @@
 import { convertHTMLElementToImage } from "../util";
 import fetchCallWrapper from "./fetchCallWrapper";
 
-const baseUrl = "http://localhost:3000";
+const baseUrl = "http://3.128.94.79:3000/users";
+const expensesBaseUrl = "http://3.128.94.79:3000/expenses";
 
 export const authenticateUser = async () => {
   const options = {
     method: "GET",
   };
-  return await fetchCallWrapper(`${baseUrl}/users/authenticate`, options);
+  return await fetchCallWrapper(`${baseUrl}/authenticate`, options);
 };
 
 export const loginUser = async (email, password) => {
@@ -18,7 +19,7 @@ export const loginUser = async (email, password) => {
     },
     body: JSON.stringify({ email, password }),
   };
-  return await fetchCallWrapper(`${baseUrl}/users/login`, options);
+  return await fetchCallWrapper(`${baseUrl}/login`, options);
 };
 
 export const signUpUser = async (email, password) => {
@@ -30,7 +31,7 @@ export const signUpUser = async (email, password) => {
     body: JSON.stringify({ email, password }),
   };
 
-  return await fetchCallWrapper(`http://localhost:3000/users/signup`, options);
+  return await fetchCallWrapper(`${baseUrl}/signup`, options);
 };
 
 export const logoutUser = async () => {
@@ -38,18 +39,7 @@ export const logoutUser = async () => {
     method: "GET",
   };
 
-  return await fetchCallWrapper(`http://localhost:3000/users/logout`, options);
-};
-
-export const signUpUserWithGoogle = async () => {
-  const options = {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  };
-
-  return await fetchCallWrapper(`http://localhost:3000/auth/google`, options);
+  return await fetchCallWrapper(`${baseUrl}/logout`, options);
 };
 
 export const getUserExpenses = async (spreadsheetId) => {
@@ -58,7 +48,7 @@ export const getUserExpenses = async (spreadsheetId) => {
   };
 
   return await fetchCallWrapper(
-    `${baseUrl}/expenses/spreadsheet/${spreadsheetId}`,
+    `${expensesBaseUrl}/spreadsheet/${spreadsheetId}`,
     options
   );
 };
@@ -72,7 +62,7 @@ export const updateUserExpenses = async (expenses, spreadsheetId) => {
     body: JSON.stringify({ expenses, spreadsheetId }),
   };
 
-  return await fetchCallWrapper(`${baseUrl}/users/update-expenses`, options);
+  return await fetchCallWrapper(`${baseUrl}/update-expenses`, options);
 };
 
 export const updateUserSpreadsheetScreenshot = async (
@@ -82,15 +72,18 @@ export const updateUserSpreadsheetScreenshot = async (
   try {
     const screenshotPreview = await convertHTMLElementToImage(tableRef);
     const formData = new FormData();
-    formData.append("file", screenshotPreview)
-    
+    formData.append("file", screenshotPreview);
+
     const options = {
       method: "PATCH",
       credentials: "include",
       body: formData,
     };
 
-    return await fetchCallWrapper(`${baseUrl}/users/update-spreadsheet-screenshot/${spreadsheetId}`, options);
+    return await fetchCallWrapper(
+      `${baseUrl}/update-spreadsheet-screenshot/${spreadsheetId}`,
+      options
+    );
   } catch (error) {
     console.error("Error updating user spreadsheet screenshot:", error);
   }
@@ -105,18 +98,7 @@ export const updateUserSpreadsheetName = async (name, spreadsheetId) => {
     body: JSON.stringify({ name, spreadsheetId }),
   };
 
-  return await fetchCallWrapper(
-    `${baseUrl}/users/update-spreadsheet-name`,
-    options
-  );
-};
-
-export const getUserGoogleInfo = async () => {
-  const options = {
-    method: "GET",
-  };
-
-  return await fetchCallWrapper(`${baseUrl}/auth/google/userinfo`, options);
+  return await fetchCallWrapper(`${baseUrl}/update-spreadsheet-name`, options);
 };
 
 export const getUserSpreadsheetsShallowInfo = async () => {
@@ -125,7 +107,7 @@ export const getUserSpreadsheetsShallowInfo = async () => {
   };
 
   return await fetchCallWrapper(
-    `${baseUrl}/users/spreadsheets-shallow-info`,
+    `${baseUrl}/spreadsheets-shallow-info`,
     options
   );
 };

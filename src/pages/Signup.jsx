@@ -1,7 +1,8 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import { signUpUser, signUpUserWithGoogle } from "../services/userServices";
+import { signUpUser } from "../services/userServices";
+import { signUpUserWithGoogle } from "../services/authServices";
 import LandingAnimation from "../components/LandingAnimation";
 import { Separator, Button, Input } from "../components/ui";
 import { GoogleLogo, ColouredLongLogo } from "../assets/logos";

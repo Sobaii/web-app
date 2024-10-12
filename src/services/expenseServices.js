@@ -1,8 +1,8 @@
 import fetchCallWrapper from "./fetchCallWrapper";
 
-const baseUrl = "http://localhost:3000/expenses";
+const baseUrl = "3.128.94.79:3000/expenses";
 
-export const getFileUrl = async (fileName) => {
+export const getS3FileUrl = async (fileName) => {
   const url = `${baseUrl}/fileUrl/${fileName}`;
   const options = {
     method: "GET",

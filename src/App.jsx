@@ -7,7 +7,7 @@ import AppTopNav from "./layouts/AppTopNav";
 import Settings from "./pages/Settings";
 import ExpensesSpreadsheet from "./pages/ExpensesSpreadsheet";
 import { UserAuthProvider, useUserAuth } from "./data/contexts/UserAuthContext";
-import { authenticateUser, getUserGoogleInfo } from "./services/userServices";
+import { authenticateUser } from "./services/userServices";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import { SplineModel, Loader } from "./components/ui";

@@ -5,7 +5,7 @@ import {
   updateUserSpreadsheetScreenshot,
   updateUserSpreadsheetName,
 } from "../services/userServices";
-import { downloadExpensesXLSX, getFileUrl } from "../services/expenseServices";
+import { downloadExpensesXLSX, getS3FileUrl } from "../services/expenseServices";
 import { sortNestedExpenseObject } from "../util/expenseUtils";
 import { toast } from "sonner";
 
@@ -51,7 +51,7 @@ const useDataTable = (spreadsheetId) => {
 
   const viewPDF = async (filename, expense) => {
     try {
-      const fileUrl = await getFileUrl(filename);
+      const fileUrl = await getS3FileUrl(filename);
       setViewingFileUrl(fileUrl);
       setActiveExpense(expense);
       toast.success("PDF loaded successfully");

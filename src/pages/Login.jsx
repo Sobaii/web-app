@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
-import { loginUser, signUpUserWithGoogle } from '../services/userServices';
+import { loginUser } from '../services/userServices';
+import { signUpUserWithGoogle } from '../services/authServices';
 import LandingAnimation from '../components/LandingAnimation';
 import { Separator, Button, Input } from '../components/ui';
 import { GoogleLogo, ColouredLongLogo } from '../assets/logos';
@@ -37,6 +38,8 @@ function Login() {
                 <img src={ColouredLongLogo} className='mb-5 h-7 w-fit' />
                 <h1 className='text-3xl font-semibold'>Login to your account</h1>
                 <p className='text-gray-600 text-sm -mt-2 mb-4'>Let's get started with your projects.</p>
+                <label for="totalAmt">Total Amount</label>
+                <input type="number" step="0.01" id="totalAmt"></input>
                 <form onSubmit={handleSubmit(onLoginSubmit)} className="flex flex-col gap-4">
                     <Input type='email' label='Email *' fullWidth={true}
                         {...register('email', {
