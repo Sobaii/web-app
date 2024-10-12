@@ -123,7 +123,7 @@ export default function UploadFile({
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
+            xmlns="https://www.w3.org/2000/svg"
           >
             <path
               strokeLinecap="round"
@@ -168,7 +168,7 @@ export default function UploadFile({
                   className="text-red-500 hover:text-red-700 flex-shrink-0"
                 >
                   <svg
-                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns="https://www.w3.org/2000/svg"
                     className="h-5 w-5"
                     viewBox="0 0 20 20"
                     fill="currentColor"
