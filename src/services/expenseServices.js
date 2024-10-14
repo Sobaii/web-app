@@ -1,6 +1,6 @@
 import fetchCallWrapper from "./fetchCallWrapper";
 
-const baseUrl = "https://3.128.94.79:3000/expenses";
+const baseUrl = `${import.meta.env.VITE_SERVER_URL}/expenses`;
 
 export const getS3FileUrl = async (fileName) => {
   const url = `${baseUrl}/fileUrl/${fileName}`;

@@ -4,7 +4,7 @@ const fetchCallWrapper = async (url, options, parseResponseJSON = true) => {
     let response = await fetch(url, { ...options, credentials: "include" });
 
     if (response.status === 401 && url.includes('/auth')) {
-      const refreshResponse = await fetch("https://3.128.94.79:3000/auth/refresh-access-token", {
+      const refreshResponse = await fetch(`${import.meta.env.VITE_SERVER_URL}/auth/refresh-access-token`, {
         credentials: "include"
       });
       if (refreshResponse.status === 401) {
