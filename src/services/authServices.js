@@ -1,6 +1,6 @@
 import fetchCallWrapper from "./fetchCallWrapper";
 
-const baseUrl = `${'https://api.sobaii.ca'}/auth`;
+const baseUrl = 'https://api.sobaii.ca/auth';
 
 export const signUpUserWithGoogle = async () => {
   const options = { 
