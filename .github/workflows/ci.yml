@@ -33,5 +33,8 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: 'us-east-2'
 
+      - name: Clear S3 bucket
+        run: aws s3 rm s3://sobaii-react-web-app --recursive
+
       - name: Upload to S3
         run: aws s3 cp ./dist s3://sobaii-react-web-app --recursive
