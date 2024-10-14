@@ -3,7 +3,7 @@ import fetchCallWrapper from "./fetchCallWrapper";
 const baseUrl = `${import.meta.env.VITE_SERVER_URL}/auth`;
 
 export const signUpUserWithGoogle = async () => {
-  const options = {
+  const options = { 
     method: "POST",
     headers: {
       "Content-Type": "application/json",
