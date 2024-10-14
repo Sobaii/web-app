@@ -1,6 +1,6 @@
 import fetchCallWrapper from "./fetchCallWrapper";
 
-const baseUrl = `${import.meta.env.VITE_SERVER_URL}/auth`;
+const baseUrl = `${'https://api.sobaii.ca'}/auth`;
 
 export const signUpUserWithGoogle = async () => {
   const options = { 
