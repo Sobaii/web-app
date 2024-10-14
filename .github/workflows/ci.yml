@@ -38,3 +38,10 @@ jobs:
 
       - name: Upload to S3
         run: aws s3 cp ./dist s3://sobaii-react-web-app --recursive
+
+      - name: Invalidate CloudFront Distribution
+        run:  aws cloudfront create-invalidation --distribution-id ECB00V9P9MRGB --paths "/index.html"
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_DEFAULT_REGION: 'us-east-1'
