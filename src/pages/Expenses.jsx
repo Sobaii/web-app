@@ -71,7 +71,7 @@ function Expenses() {
                     <p className="text-slate-500">Opened {convertToReadableDate(spreadsheet.lastOpened)}</p>
                   </div>
 
-                  <img src={spreadsheet.screenshotPreviewUrl} className="w-full" />
+                  <img src={spreadsheet.imageUrl} className="w-full" />
                 </Card>
               ))}
           </div>

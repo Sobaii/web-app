@@ -14,6 +14,7 @@ export function useSpreadsheets() {
       setLoading(true);
       try {
         const response = await getUserSpreadsheetsShallowInfo();
+        console.log("response", response);
         setSpreadsheets(response);
       } catch (error) {
         console.error("Error getting spreadsheet shallow data", error);

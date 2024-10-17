@@ -15,17 +15,18 @@ const Button = ({
   const [isLoading, setIsLoading] = useState(false);
 
   const onClick = async (e) => {
-    e.stopPropagation()
+    e.stopPropagation();
     if (!disabled && !isLoading && handleClick) {
       setIsLoading(true);
       try {
-        await handleClick();
+        await handleClick(e); 
       } catch (error) {
         console.error(error);
       }
       setIsLoading(false);
     }
   };
+
 
   const buttonClass = clsx(
     'flex h-fit shadow whitespace-nowrap hover:opacity-70 justify-center flex-shrink-0 items-center gap-2 min-w-[120px] rounded transition-opacity duration-75 ease-linear',
@@ -35,7 +36,7 @@ const Button = ({
     variant === 'primary' && 'bg-gradient-to-b from-[#228ee6] to-[#155bc4] text-white',
     variant === 'secondary' && 'bg-gray-200 text-gray-800',
     variant === 'outline' && 'bg-white border border-gray-300  text-gray-800',
-    variant === 'destructive' && 'bg-red-600 border border-red-700  text-white', 
+    variant === 'destructive' && 'bg-red-600 border border-red-700  text-white',
     isLoading && 'opacity-60 cursor-not-allowed',
     disabled && '!opacity-60 cursor-not-allowed',
     className

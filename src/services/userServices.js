@@ -70,6 +70,7 @@ export const updateUserSpreadsheetScreenshot = async (
   spreadsheetId
 ) => {
   try {
+    console.log("spreadsheetid", spreadsheetId);
     const screenshotPreview = await convertHTMLElementToImage(tableRef);
     const formData = new FormData();
     formData.append("file", screenshotPreview);

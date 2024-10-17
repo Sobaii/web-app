@@ -99,7 +99,7 @@ export default function UploadFile({
   }, [selectedFiles]);
 
   return (
-    <Modal showModal={showUploadModal} setShowModal={setShowUploadModal}>
+    <Modal alert={true} showModal={showUploadModal} setShowModal={setShowUploadModal}>
       <h3 className="text-2xl font-bold text-gray-800">Upload Files</h3>
       <div className="flex flex-col -mt-3 gap-1">
         <p className="text-sm text-gray-600 ">Note:</p>
