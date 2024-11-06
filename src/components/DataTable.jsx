@@ -6,15 +6,15 @@ import useDataTable from '../hooks/useDataTable'
 import { numericKeys } from '../util/expenseUtils'
 import { getAllKeysInObjectArray } from '../util'
 
-import ExpenseRender from './ExpenseRender'
-import UploadFile from "./UploadFile";
+import ReceiptRender from './ReceiptRender'
+import ReceiptUploadModal from "./ReceiptUploadModal";
 
 import { Button, MultiSelect, Loader, Card, Input } from "../components/ui";
 
 import DataTableHeader from "./DataTableHeader";
 import DataTableRow from "./DataTableRow";
 
-import { UploadFileIcon, DownloadFileIcon, SaveFileIcon } from "../assets/icons";
+import { DownloadFileIcon, SaveFileIcon } from "../assets/icons";
 
 
 function DataTable() {
@@ -27,14 +27,12 @@ function DataTable() {
     sortConfig,
     viewingFileUrl,
     activeExpense,
-    showUploadModal,
     selectedExpenses,
     loading,
     setActiveExpense,
     setExpenses,
     setSpreadsheetName,
     setSelectedFields,
-    setShowUploadModal,
     setViewingFileUrl,
     requestSort,
     viewPDF,
@@ -42,7 +40,7 @@ function DataTable() {
     handleExpenseChange,
     handleCheckboxChange,
     handleSelectAll,
-    removeSelectedExpenses,
+    deleteSelectedExpenses,
     generateCSV,
   } = useDataTable(spreadsheetId);
   const tableRef = useRef(null)
@@ -50,7 +48,7 @@ function DataTable() {
 
   if (loading) return <Loader />;
 
-  const allKeys = getAllKeysInObjectArray(expenses, ["fileKey", "_id"]);
+  const allKeys = getAllKeysInObjectArray(expenses, ["fileKey", "id"]);
 
 
   return (
@@ -68,10 +66,9 @@ function DataTable() {
             placeholder="Select Categories"
           />
         )}
-        <Button
-          text="Upload Files"
-          onClick={() => setShowUploadModal(true)}
-          imageSrc={UploadFileIcon}
+        <ReceiptUploadModal
+          setExpenses={setExpenses}
+          spreadsheetId={spreadsheetId}
         />
         {expenses.length > 0 && (
           <>
@@ -84,7 +81,7 @@ function DataTable() {
           </>
         )}
         {viewingFileUrl && (
-          <ExpenseRender
+          <ReceiptRender
             fileUrl={viewingFileUrl}
             handleClose={() => {
               setActiveExpense(null);
@@ -92,15 +89,9 @@ function DataTable() {
             }}
           />
         )}
-        <UploadFile
-          showUploadModal={showUploadModal}
-          setShowUploadModal={setShowUploadModal}
-          setExpenses={setExpenses}
-          spreadsheetId={spreadsheetId}
-        />
         {selectedExpenses.length > 0 && (
           <Button
-            onClick={removeSelectedExpenses}
+            handleClick={(e) => deleteSelectedExpenses()} 
             variant="destructive"
             text={`Delete ${selectedExpenses.length} item${selectedExpenses.length > 1 ? "s" : ""}`}
           />
@@ -130,7 +121,7 @@ function DataTable() {
                 selectedFields={selectedFields}
                 numericKeys={numericKeys}
                 isActive={expense === activeExpense}
-                isSelected={selectedExpenses.includes(expense._id)}
+                isSelected={selectedExpenses.includes(expense.id)}
                 onCheckboxChange={handleCheckboxChange}
                 onExpenseChange={handleExpenseChange}
                 onViewPDF={viewPDF}

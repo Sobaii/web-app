@@ -1,14 +1,13 @@
 import { convertHTMLElementToImage } from "../util";
 import fetchCallWrapper from "./fetchCallWrapper";
 
-const baseUrl = `${import.meta.env.VITE_SERVER_URL}/users`;
-const expensesBaseUrl = `${import.meta.env.VITE_SERVER_URL}/expenses`;
+const baseUrl = `${import.meta.env.VITE_SERVER_URL}`; 
 
 export const authenticateUser = async () => {
   const options = {
     method: "GET",
   };
-  return await fetchCallWrapper(`${baseUrl}/authenticate`, options);
+  return await fetchCallWrapper(`${baseUrl}/users/authenticate`, options);
 };
 
 export const loginUser = async (email, password) => {
@@ -19,7 +18,7 @@ export const loginUser = async (email, password) => {
     },
     body: JSON.stringify({ email, password }),
   };
-  return await fetchCallWrapper(`${baseUrl}/login`, options);
+  return await fetchCallWrapper(`${baseUrl}/users/login`, options);
 };
 
 export const signUpUser = async (email, password) => {
@@ -31,7 +30,7 @@ export const signUpUser = async (email, password) => {
     body: JSON.stringify({ email, password }),
   };
 
-  return await fetchCallWrapper(`${baseUrl}/signup`, options);
+  return await fetchCallWrapper(`${baseUrl}/users/signup`, options);
 };
 
 export const logoutUser = async () => {
@@ -39,7 +38,7 @@ export const logoutUser = async () => {
     method: "GET",
   };
 
-  return await fetchCallWrapper(`${baseUrl}/logout`, options);
+  return await fetchCallWrapper(`${baseUrl}/users/logout`, options);
 };
 
 export const getUserExpenses = async (spreadsheetId) => {
@@ -48,9 +47,21 @@ export const getUserExpenses = async (spreadsheetId) => {
   };
 
   return await fetchCallWrapper(
-    `${expensesBaseUrl}/spreadsheet/${spreadsheetId}`,
+    `${baseUrl}/expenses/spreadsheet/${spreadsheetId}`,
     options
   );
+};
+
+export const deleteUserExpenses = async (expenses, spreadsheetId) => {
+  const options = {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ expenses, spreadsheetId }),
+  };
+
+  return await fetchCallWrapper(`${baseUrl}/users/update-expenses`, options);
 };
 
 export const updateUserExpenses = async (expenses, spreadsheetId) => {
@@ -62,7 +73,7 @@ export const updateUserExpenses = async (expenses, spreadsheetId) => {
     body: JSON.stringify({ expenses, spreadsheetId }),
   };
 
-  return await fetchCallWrapper(`${baseUrl}/update-expenses`, options);
+  return await fetchCallWrapper(`${baseUrl}/users/update-expenses`, options);
 };
 
 export const updateUserSpreadsheetScreenshot = async (
@@ -70,7 +81,6 @@ export const updateUserSpreadsheetScreenshot = async (
   spreadsheetId
 ) => {
   try {
-    console.log("spreadsheetid", spreadsheetId);
     const screenshotPreview = await convertHTMLElementToImage(tableRef);
     const formData = new FormData();
     formData.append("file", screenshotPreview);
@@ -82,7 +92,7 @@ export const updateUserSpreadsheetScreenshot = async (
     };
 
     return await fetchCallWrapper(
-      `${baseUrl}/update-spreadsheet-screenshot/${spreadsheetId}`,
+      `${baseUrl}/users/update-spreadsheet-screenshot/${spreadsheetId}`,
       options
     );
   } catch (error) {
@@ -99,7 +109,7 @@ export const updateUserSpreadsheetName = async (name, spreadsheetId) => {
     body: JSON.stringify({ name, spreadsheetId }),
   };
 
-  return await fetchCallWrapper(`${baseUrl}/update-spreadsheet-name`, options);
+  return await fetchCallWrapper(`${baseUrl}/users/update-spreadsheet-name`, options);
 };
 
 export const getUserSpreadsheetsShallowInfo = async () => {
@@ -108,7 +118,7 @@ export const getUserSpreadsheetsShallowInfo = async () => {
   };
 
   return await fetchCallWrapper(
-    `${baseUrl}/spreadsheets-shallow-info`,
+    `${baseUrl}/users/spreadsheets-shallow-info`,
     options
   );
 };

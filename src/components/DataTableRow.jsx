@@ -7,7 +7,7 @@ const DataTableRow = ({ expense, index, selectedFields, numericKeys, isActive, i
   <tr className={`relative outline-1 outline outline-transparent hover:z-30 hover:outline-black ${isActive && "!outline-red-500 !outline-4 z-40"}`}>
 
     <td className="flex items-center justify-center pl-3 h-8 w-full">
-      <Checkbox checked={isSelected} onChange={() => onCheckboxChange(expense._id)} />
+      <Checkbox checked={isSelected} onChange={() => onCheckboxChange(expense.id)} />
     </td>
     <td className="text-center px-2">{index + 1}</td>
     {selectedFields.map((key) => {
@@ -17,7 +17,7 @@ const DataTableRow = ({ expense, index, selectedFields, numericKeys, isActive, i
       const backgroundColor = getBackgroundColor(confidence);
 
       return (
-        <td key={`${expense._id}-${key}`}>
+        <td key={`${expense.id}-${key}`}>
           <input
             value={expense[key]}
             onChange={(e) => {

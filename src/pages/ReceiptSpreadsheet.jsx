@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import DataTable from "../components/DataTable";
 import ConfidenceGradient from "../components/ConfidenceGradient";
 
-function ExpensesSpreadsheet() {
+function ReceiptSpreadsheet() {
   return (
     <>
       <ConfidenceGradient />
@@ -11,4 +11,4 @@ function ExpensesSpreadsheet() {
   );
 }
 
-export default ExpensesSpreadsheet;
+export default ReceiptSpreadsheet;

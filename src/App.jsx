@@ -1,16 +1,16 @@
 import "./App.css";
 import React, { useEffect, useState } from "react";
 import { Routes, Route, Outlet, useNavigate } from "react-router-dom";
-import Expenses from "./pages/Expenses";
 import { Toaster } from "sonner";
 import AppTopNav from "./layouts/AppTopNav";
 import Settings from "./pages/Settings";
-import ExpensesSpreadsheet from "./pages/ExpensesSpreadsheet";
+import ReceiptSpreadsheet from "./pages/ReceiptSpreadsheet";
 import { UserAuthProvider, useUserAuth } from "./data/contexts/UserAuthContext";
 import { authenticateUser } from "./services/userServices";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import { SplineModel, Loader } from "./components/ui";
+import Dashboard from "./pages/Dashboard";
 
 function AppLayout() {
   const { user, setUser } = useUserAuth();
@@ -18,7 +18,7 @@ function AppLayout() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const fetchUserGoogleData = async () => {
+    const runUserAuthCheck = async () => {
       setIsLoading(true);
       try {
         const data = await authenticateUser();
@@ -28,13 +28,13 @@ function AppLayout() {
           navigate("/");
         }
       } catch (error) {
-        console.error("Failed to fetch Google user data:", error);
+        console.error("Failed to authenticate user:", error);
         navigate("/");
       } finally {
         setIsLoading(false);
       }
     };
-    fetchUserGoogleData();
+    runUserAuthCheck();
   }, []);
 
   if (isLoading) {
@@ -61,7 +61,7 @@ function AppLayout() {
 function App() {
   return (
     <UserAuthProvider>
-      <div className="bg-neutral-50  min-h-screen w-fit min-w-full">
+      <div className="min-h-screen w-fit min-w-full">
         <Toaster
           richColors
           toastOptions={{
@@ -72,10 +72,10 @@ function App() {
           <Route path="/" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route element={<AppLayout />}>
-            <Route path="/expenses" element={<Expenses />} />
+            <Route path="/dashboard" element={<Dashboard />} />
             <Route
-              path="/expenses/spreadsheet"
-              element={<ExpensesSpreadsheet />}
+              path="/dashboard/spreadsheet"
+              element={<ReceiptSpreadsheet />}
             />
             <Route path="/settings" element={<Settings />} />
           </Route>

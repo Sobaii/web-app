@@ -12,7 +12,7 @@ export const useAuth = () => {
   const onSignupSubmit = async (data) => {
     try {
       await signUpUser(data.email, data.password);
-      navigate('/expenses');
+      navigate('/dashboard');
     } catch (err) {
       console.error('Sign up failed:', err.message);
       setError(err.message);
@@ -22,7 +22,7 @@ export const useAuth = () => {
   const onLoginSubmit = async (data) => {
     try {
       await loginUser(data.email, data.password);
-      navigate('/expenses');
+      navigate('/dashboard');
     } catch (err) {
       console.error('Login failed:', err.message);
       setError(err.message);

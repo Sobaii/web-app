@@ -35,16 +35,10 @@ function AppTopNav() {
 
   const { user } = useUserAuth();
 
-  useEffect(() => {
-    if (user === null) {
-      // navigate('/');
-    }
-  }, [user, navigate]);
-
   return (
     <main className="border-b z-40 bg-white border-neutral-200 relative w-full h-24 py-4 px-6 gap-6 flex flex-col">
       <div className="w-full h-6 flex justify-between">
-        <img onClick={() => navigate('/expenses')} className="cursor-pointer h-6 w-fit" src={ColouredLongLogo} alt="ColouredLongLogo" />
+        <img onClick={() => navigate('/dashboard')} className="cursor-pointer h-6 w-fit" src={ColouredLongLogo} alt="ColouredLongLogo" />
         {user && (
           user.picture ? (
             <Popover position="down-left">
@@ -69,7 +63,7 @@ function AppTopNav() {
 
       </div>
       <div className="flex absolute bottom-0">
-        <SideNavLink href="/expenses" IconComponent={LuBarChartBig} label="Receipt Collections" />
+        <SideNavLink href="/dashboard" IconComponent={LuBarChartBig} label="Dashboard" />
         <SideNavLink href="/settings?section=general" IconComponent={IoSettingsOutline} label="Settings" />
       </div>
 

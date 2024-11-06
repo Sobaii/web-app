@@ -4,6 +4,7 @@ import {
   updateUserExpenses,
   updateUserSpreadsheetScreenshot,
   updateUserSpreadsheetName,
+  deleteUserExpenses,
 } from "../services/userServices";
 import { downloadExpensesXLSX, getS3FileUrl } from "../services/expenseServices";
 import { sortNestedExpenseObject } from "../util/expenseUtils";
@@ -26,16 +27,20 @@ const useDataTable = (spreadsheetId) => {
   });
   const [viewingFileUrl, setViewingFileUrl] = useState(null);
   const [activeExpense, setActiveExpense] = useState(null);
-  const [showUploadModal, setShowUploadModal] = useState(false);
   const [selectedExpenses, setSelectedExpenses] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchExpenses = async () => {
-      const data = await getUserExpenses(spreadsheetId);
-      setSpreadsheetName(data.name);
-      setExpenses(data.expenses);
-      setLoading(false);
+      try {
+        const data = await getUserExpenses(spreadsheetId);
+        setSpreadsheetName(data.name);
+        setExpenses(data.expenses);
+      } catch {
+        toast.error("Failed to fetch expenses");        
+      } finally {
+        setLoading(false);
+      }
     };
     fetchExpenses();
   }, [spreadsheetId]);
@@ -62,6 +67,7 @@ const useDataTable = (spreadsheetId) => {
 
   const handleSave = async (tableRef) => {
     try {
+      console.log(expenses)
       await Promise.all([
         updateUserSpreadsheetScreenshot(tableRef, spreadsheetId),
         updateUserExpenses(expenses, spreadsheetId),
@@ -91,15 +97,17 @@ const useDataTable = (spreadsheetId) => {
     setSelectedExpenses((prev) =>
       prev.length === expenses.length
         ? []
-        : expenses.map((expense) => expense._id)
+        : expenses.map((expense) => expense.id)
     );
   };
 
-  const removeSelectedExpenses = () => {
+  const deleteSelectedExpenses = async () => {
+    await deleteUserExpenses(selectedExpenses, spreadsheetId);
     setExpenses((prev) =>
-      prev.filter((expense) => !selectedExpenses.includes(expense._id))
+      prev.filter((expense) => !selectedExpenses.includes(expense.id))
     );
     setSelectedExpenses([]);
+    toast.success("Expenses deleted successfully");
   };
 
   const generateCSV = async () => {
@@ -118,14 +126,12 @@ const useDataTable = (spreadsheetId) => {
     sortConfig,
     viewingFileUrl,
     activeExpense,
-    showUploadModal,
     selectedExpenses,
     loading,
     setActiveExpense,
     setExpenses,
     setSpreadsheetName,
     setSelectedFields,
-    setShowUploadModal,
     setViewingFileUrl,
     requestSort,
     viewPDF,
@@ -133,7 +139,7 @@ const useDataTable = (spreadsheetId) => {
     handleExpenseChange,
     handleCheckboxChange,
     handleSelectAll,
-    removeSelectedExpenses,
+    deleteSelectedExpenses,
     generateCSV,
   };
 };

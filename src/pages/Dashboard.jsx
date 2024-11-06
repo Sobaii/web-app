@@ -5,7 +5,7 @@ import { EllipsisIcon } from '../assets/icons'
 import { convertToReadableDate } from "../util/dateUtils";
 import { useSpreadsheets } from "../hooks/useSpreadsheets";
 
-function Expenses() {
+function Dashboard() {
   const [search, setSearch] = useState("");
   const [showCreateModal, setShowCreateModal] = useState(false);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
@@ -25,7 +25,7 @@ function Expenses() {
     if (!spreadsheetName) return;
     try {
       const response = await createSpreadsheet(spreadsheetName);
-      navigate(`/expenses/spreadsheet?spreadsheet=${response._id}`);
+      navigate(`/dashboard/spreadsheet?spreadsheet=${response.id}`);
     } catch (error) {
       console.error("Error creating spreadsheet", error);
     }
@@ -56,7 +56,7 @@ function Expenses() {
             {filteredSpreadsheets.length === 0 ? <p>No spreadsheets found</p>
               :
               filteredSpreadsheets.map((spreadsheet, index) => (
-                <Card key={index} className='p-0 gap-0 border-2 overflow-hidden col-span-1 max-h-[600px] hover:border-blue-500 cursor-pointer flex' onClick={() => navigate(`/expenses/spreadsheet?spreadsheet=${spreadsheet.id}`)}>
+                <Card key={index} className='p-0 gap-0 border-2 overflow-hidden col-span-1 max-h-[600px] hover:border-blue-500 cursor-pointer flex' onClick={() => navigate(`/dashboard/spreadsheet?spreadsheet=${spreadsheet.id}`)}>
                   <div className="p-5 gap-1 flex flex-col">
                     <div className='flex gap-3 justify-between items-center'>
                       <h2 className="whitespace-nowrap truncate">{spreadsheet.name}</h2>
@@ -90,4 +90,4 @@ function Expenses() {
   );
 }
 
-export default Expenses;
+export default Dashboard;

@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Button } from "./ui";
 
-function ExpenseRender({ fileUrl, handleClose }) {
+function ReceiptRender({ fileUrl, handleClose }) {
   const [height, setHeight] = useState(500);
   const [isDragging, setIsDragging] = useState(false);
   const containerRef = useRef(null);
@@ -43,29 +43,14 @@ function ExpenseRender({ fileUrl, handleClose }) {
 
   return (
     <div
+      className={`z-[100] fixed left-0 right-0 bottom-0 max-h-screen w-full flex flex-col bg-white shadow-[0px_-2px_10px_rgba(0,0,0,0.1)]`}
       ref={containerRef}
       style={{
-        zIndex: '100',
-        position: "fixed",
-        left: "0",
-        right: "0",
-        bottom: "0",
-        maxHeight: '100vh',
         height: `${height}px`,
-        width: "100%",
-        display: "flex",
-        flexDirection: "column",
-        backgroundColor: "white",
-        boxShadow: "0px -2px 10px rgba(0,0,0,0.1)",
       }}
     >
       <div
-        style={{
-          minHeight: "10px",
-          cursor: "ns-resize",
-          backgroundColor: "#f0f0f0",
-          borderTop: "1px solid #ccc",
-        }}
+        className="min-h-[10px] cursor-ns-resize bg-gray-100 border-t border-gray-300"
         onMouseDown={handleMouseDown}
       ></div>
       <Button
@@ -74,32 +59,19 @@ function ExpenseRender({ fileUrl, handleClose }) {
         handleClick={handleClose}
         text='Close'
       />
-      <div style={{ position: 'relative', flexGrow: 1, overflowY: 'auto' }}>
+      <div className="relative flex-grow overflow-y-auto">
         <img
-          className="select-none"
+          className="select-none m-auto h-full object-contain"
           src={fileUrl}
-          style={{
-            width: "100vw", // Set width to 100% of the viewport width
-            height: "auto", // Maintain aspect ratio
-            objectFit: "contain",
-          }}
+
           alt="File content"
         />
         {isDragging && (
-          <div
-            style={{
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              right: 0,
-              bottom: 0,
-              cursor: 'ns-resize',
-            }}
-          />
+          <div className="absolute top-0 left-0 right-0 bottom-0 cursor-ns-resize" />
         )}
       </div>
     </div>
   );
 }
 
-export default ExpenseRender;
+export default ReceiptRender;
