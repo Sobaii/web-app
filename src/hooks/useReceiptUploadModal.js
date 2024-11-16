@@ -47,7 +47,6 @@ export default function useReceiptUploadModal(setExpenses, spreadsheetId) {
     }
     try {
       const response = await uploadExpenses(selectedFiles, spreadsheetId);
-      console.log(response)
       response.forEach((file) => {
         setExpenses((prevExpenses) => [...prevExpenses, file]);
       });

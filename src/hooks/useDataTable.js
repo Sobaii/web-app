@@ -67,7 +67,6 @@ const useDataTable = (spreadsheetId) => {
 
   const handleSave = async (tableRef) => {
     try {
-      console.log(expenses)
       await Promise.all([
         updateUserSpreadsheetScreenshot(tableRef, spreadsheetId),
         updateUserExpenses(expenses, spreadsheetId),

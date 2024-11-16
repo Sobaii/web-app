@@ -59,6 +59,7 @@ function AppLayout() {
 }
 
 function App() {
+  console.log('env', import.meta.env)
   return (
     <UserAuthProvider>
       <div className="min-h-screen w-fit min-w-full">
