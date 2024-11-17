@@ -59,7 +59,6 @@ function AppLayout() {
 }
 
 function App() {
-  console.log('cookies', document.cookie)
   return (
     <UserAuthProvider>
       <div className="min-h-screen w-fit min-w-full">
