@@ -40,7 +40,7 @@ function AppTopNav() {
       <div className="w-full h-6 flex justify-between">
         <img onClick={() => navigate('/dashboard')} className="cursor-pointer h-6 w-fit" src={ColouredLongLogo} alt="ColouredLongLogo" />
         {user && (
-          user.picture ? (
+          false ? (
             <Popover position="down-left">
               <img src={user.picture} alt="User" className="cursor-pointer h-10 w-10 rounded-full" />
               <Card className="p-3 w-fit gap-3">
